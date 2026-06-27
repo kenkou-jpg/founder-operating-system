@@ -1,86 +1,144 @@
 # Founder Operating System
 
-> 一人創業者が、複数の事業を同じ思想・同じ品質・同じ運営基準で長期運営するための共通OS。
+> One person. Multiple products. One OS.
 
-## What is this?
+---
 
-このリポジトリは **Founder OS** — 創業者個人が持つ意思決定基準・運営ルール・再利用可能なテンプレートを一元管理するシステムです。
+## What is the Founder Operating System?
 
-コードではなく、**思想・判断基準・手順書・テンプレート** の集合体です。
-各プロジェクトリポジトリ（ippo / agripath / fasting-app 等）はこのOSの「実装例」であり、
-OSそのものはここに集約されます。
+Founder Operating System (Founder OS) は、一人の創業者が複数のSaaS・アプリ・研究事業・テンプレート事業を
+**同じ思想・同じ品質・同じ運営基準** で長期運営するための共通基盤です。
 
-## Core Philosophy
+これはコードではありません。
+これは **オペレーティングシステム** — 創業者個人の意思決定・運営・ナレッジ管理の総体です。
 
-- **One founder, multiple products** — 同じ一人の人間が複数事業を動かす前提で設計
-- **Canonical Source** — 真実は一箇所に存在する。コピーしない、参照する
-- **Async-first** — ミーティング・口頭説明に依存しない文書中心の運営
-- **Long-term compounding** — 短期の速度より、長期で積み上がる基盤を優先
+---
 
-## Repository Structure
+## 対象
+
+このOSは以下のすべてのプロダクト・事業に適用されます。
+
+| プロダクト | カテゴリ | ステータス |
+|-----------|---------|-----------|
+| **ippo** | ウォーキング・習慣化アプリ | Active |
+| **AgriPath** | 農業キャリア・情報プラットフォーム | Planning |
+| **Imaging Agriculture** | 農業×画像解析・リサーチ事業 | Research |
+| **Fasting App** | 断食・食習慣管理アプリ | Concept |
+| 新規SaaS（未定） | — | Future |
+
+---
+
+## 思想
+
+### なぜこのOSが必要か
+
+一人で複数事業を動かすとき、最大の敵は **判断の一貫性の欠如** と **再発明のコスト** です。
+
+- 同じ問いに毎回ゼロから答えない
+- 一つのプロダクトで学んだことを他に転用する
+- ブランド・品質・倫理の基準を統一する
+
+Founder OSはこの問題を解くための仕組みです。
+
+### 核心思想
+
+1. **Single Source of Truth** — 真実は一箇所に存在する
+2. **Canonical over Copy** — コピーしない、参照する
+3. **Long-term Compounding** — 短期の速度より長期の積み上がりを選ぶ
+4. **Automation First** — 繰り返しは自動化する
+5. **Quality without Compromise** — 品質は交渉の余地がない
+
+詳細は [`FOUNDER_PHILOSOPHY.md`](FOUNDER_PHILOSOPHY.md) と [`OPERATING_PRINCIPLES.md`](OPERATING_PRINCIPLES.md) を参照。
+
+---
+
+## 利用方法
+
+### 新しいプロダクトを始めるとき
+
+1. [`portfolio-os/`](portfolio-os/) に新プロダクトのプロファイルを作成
+2. [`development-os/`](development-os/) の技術標準を確認・適用
+3. [`business-os/`](business-os/) の事業戦略フレームワークで計画
+4. [`CANONICAL_SOURCE.md`](CANONICAL_SOURCE.md) を更新
+
+### 重要な判断をするとき
+
+1. [`OPERATING_PRINCIPLES.md`](OPERATING_PRINCIPLES.md) で原則に照らす
+2. [`governance/DECISION_LOG.md`](governance/DECISION_LOG.md) に記録
+3. 拘束力のある決定は [`governance/BINDING_DECISIONS.md`](governance/BINDING_DECISIONS.md) へ
+
+### 各ドメインの基準を確認するとき
+
+対応するOSディレクトリの `README.md` を参照してください。
+
+---
+
+## Version 管理
+
+このOSは [`governance/CHANGELOG.md`](governance/CHANGELOG.md) でバージョン管理します。
+ロードマップは [`ROADMAP.md`](ROADMAP.md) を参照。
+
+| バージョン | 意味 |
+|-----------|------|
+| MAJOR | 根本思想・全体構造の変更 |
+| MINOR | 新OSの追加・原則の追加・テンプレートの追加 |
+| PATCH | 既存ドキュメントの修正・補足 |
+
+**現在のバージョン: v0.1.0**
+
+---
+
+## OS構成
 
 ```
 founder-operating-system/
 │
-├── README.md                    # このファイル
-├── FOUNDER_PHILOSOPHY.md        # 創業者としての根本思想
-├── CANONICAL_SOURCE.md          # 真実の在り処マップ
-├── OPERATING_PRINCIPLES.md      # 事業横断の運営原則
+├── README.md                    ← このファイル
+├── FOUNDER_PHILOSOPHY.md        ← 創業者の根本思想
+├── OPERATING_PRINCIPLES.md      ← 事業横断の運営原則
+├── CANONICAL_SOURCE.md          ← 情報ヒエラルキーの定義
+├── ROADMAP.md                   ← OSのバージョンロードマップ
 │
-├── development-os/              # 開発標準・技術方針
-├── business-os/                 # 事業戦略・GTM・収益モデル
-├── brand-os/                    # ブランド・コミュニケーション基準
-├── legal-os/                    # 法務・利用規約・契約ひな形
-├── research-os/                 # リサーチ・競合分析・インサイト管理
-├── finance-os/                  # 財務・コスト管理・投資判断
-├── analytics-os/                # 指標定義・ダッシュボード・KPI管理
-├── customer-success-os/         # CS・サポート・オンボーディング
-├── automation-os/               # 自動化・CI/CD・Workflow設計
-├── template-business-os/        # テンプレート事業の固有OS
-├── operations-os/               # 日次・週次・月次の運営ルーティン
-├── knowledge-os/                # 学習・ナレッジキャプチャ・メモ管理
+├── development-os/              ← 開発・技術標準
+├── business-os/                 ← 事業戦略・収益・GTM
+├── brand-os/                    ← ブランド・コミュニケーション
+├── legal-os/                    ← 法務・規約・コンプライアンス
+├── research-os/                 ← リサーチ・市場分析
+├── finance-os/                  ← 財務・コスト・投資判断
+├── analytics-os/                ← 指標・KPI・データ設計
+├── customer-success-os/         ← CS・サポート・オンボーディング
+├── automation-os/               ← 自動化・CI/CD・Workflow
+├── operations-os/               ← 日次〜年次の運営ルーティン
+├── knowledge-os/                ← 学習・ナレッジキャプチャ
+├── template-business-os/        ← テンプレート事業固有OS
 │
-├── portfolio-os/                # ポートフォリオ全体の管理
+├── portfolio-os/                ← プロダクトポートフォリオ管理
 │   ├── IPPO.md
 │   ├── AGRIPATH.md
+│   ├── IMAGING_AGRICULTURE.md
 │   ├── FASTING_APP.md
 │   └── PORTFOLIO_KPI.md
 │
-├── templates/                   # 再利用可能テンプレート群
-│   ├── APP_STARTER_TEMPLATE/
-│   ├── COUNCIL_TEMPLATE/
-│   ├── PR_TEMPLATE.md
-│   ├── ARCHITECTURE_TEMPLATE.md
-│   └── BUSINESS_STRATEGY_TEMPLATE.md
+├── templates/                   ← 再利用可能テンプレート
 │
-└── governance/                  # 意思決定の記録・変更ログ
+└── governance/                  ← 意思決定・変更管理
     ├── ADR/
     ├── DECISION_LOG.md
     ├── BINDING_DECISIONS.md
     └── CHANGELOG.md
 ```
 
-## How to Use
+---
 
-1. **新しい事業を始めるとき** → `templates/APP_STARTER_TEMPLATE/` から複製
-2. **技術方針を決めるとき** → `development-os/` を参照し、ADRを書く
-3. **ブランドに関わる判断** → `brand-os/` を参照
-4. **ポートフォリオ全体を見直すとき** → `portfolio-os/PORTFOLIO_KPI.md`
-5. **重要な意思決定をしたとき** → `governance/DECISION_LOG.md` に記録
+## 将来像
 
-## Versioning
+**v1.0** — 全OSが充実し、新プロダクト立ち上げを72時間以内に開始できる状態
 
-このOSは `governance/CHANGELOG.md` でバージョン管理します。
-破壊的変更（原則の変更・構造の再編）はメジャーバージョンを上げます。
+**v2.0** — AIエージェントがこのOSを読み込み、自律的に判断・実行できる状態
 
-## Portfolio
-
-| プロダクト | リポジトリ | ステータス |
-|-----------|-----------|-----------|
-| ippo | [ippo](https://github.com/kenkou-jpg/ippo) | Active |
-| AgriPath | TBD | Planning |
-| Fasting App | TBD | Concept |
+詳細は [`ROADMAP.md`](ROADMAP.md) を参照。
 
 ---
 
-*This OS is maintained by [@kenkou-jpg](https://github.com/kenkou-jpg)*
+*Maintained by [@kenkou-jpg](https://github.com/kenkou-jpg)*
+*Current Version: v0.1.0 — Foundation*

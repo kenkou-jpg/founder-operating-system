@@ -1,42 +1,72 @@
-# Changelog
+# Changelog — Founder Operating System
 
-> Founder Operating System の変更履歴。
+> このファイルはFounder OSの変更履歴を記録します。
 > バージョニング: `MAJOR.MINOR.PATCH`
-> - MAJOR: 根本思想・全体構造の変更
-> - MINOR: 新しいOSの追加・原則の追加
-> - PATCH: ドキュメントの修正・補足
 
 ---
 
-## [1.0.0] — 2026-06-27
+## How to Write
+
+```markdown
+## [X.Y.Z] — YYYY-MM-DD
+
+### Added
+- 新しく追加された文書・原則・テンプレート
+
+### Changed
+- 変更された内容（以前との違いを明記）
+
+### Deprecated
+- 今後削除予定のもの
+
+### Removed
+- 削除されたもの（なぜ削除したかを必ず書く）
+
+### Fixed
+- 誤り・矛盾の修正
+```
+
+---
+
+## [0.1.0] — 2026-06-27
 
 ### Added
 
-- `README.md` — リポジトリの概要と構造
-- `FOUNDER_PHILOSOPHY.md` — 創業者としての根本思想
-- `CANONICAL_SOURCE.md` — 情報の在り処マップ
-- `OPERATING_PRINCIPLES.md` — 事業横断の10原則
-- `development-os/README.md` — 技術方針・開発標準
-- `business-os/README.md` — 事業戦略・GTM基準
-- `brand-os/README.md` — ブランドガイドライン
-- `legal-os/README.md` — 法務方針・ひな形
-- `research-os/README.md` — リサーチ手順
-- `finance-os/README.md` — 財務管理方針
-- `analytics-os/README.md` — KPI定義・指標設計
-- `customer-success-os/README.md` — CS・サポート標準
-- `automation-os/README.md` — 自動化・CI/CD標準
-- `template-business-os/README.md` — テンプレート事業固有OS
-- `operations-os/README.md` — 運営ルーティン
-- `knowledge-os/README.md` — ナレッジキャプチャ
-- `portfolio-os/IPPO.md` — ippo プロダクトプロファイル
-- `portfolio-os/AGRIPATH.md` — AgriPath プロダクトプロファイル
-- `portfolio-os/FASTING_APP.md` — Fasting App プロダクトプロファイル
-- `portfolio-os/PORTFOLIO_KPI.md` — ポートフォリオKPIダッシュボード
-- `templates/PR_TEMPLATE.md` — PR テンプレート
-- `templates/ARCHITECTURE_TEMPLATE.md` — アーキテクチャドキュメントテンプレート
-- `templates/BUSINESS_STRATEGY_TEMPLATE.md` — 事業戦略テンプレート
-- `templates/APP_STARTER_TEMPLATE/README.md` — アプリスターターテンプレート
-- `templates/COUNCIL_TEMPLATE/README.md` — ペルソナ会議テンプレート
-- `governance/DECISION_LOG.md` — 意思決定記録
-- `governance/BINDING_DECISIONS.md` — 拘束力のある決定一覧
-- `governance/CHANGELOG.md` — このファイル
+**Core Documents**
+- `README.md` — OS全体の説明・構造・利用方法・将来像
+- `FOUNDER_PHILOSOPHY.md` — 根本思想（Operating Philosophy / Long-term Thinking / 永続設計 / One Person Company / Customer First / No Sales First / Automation First / Knowledge Asset First / Research Integrity / Founder Health）
+- `OPERATING_PRINCIPLES.md` — 18の運営原則
+- `CANONICAL_SOURCE.md` — 情報ヒエラルキーと更新ルール
+- `ROADMAP.md` — v0.1〜v2.0のロードマップ
+
+**Domain OSes（README.mdのみ）**
+- `development-os/README.md`
+- `business-os/README.md`
+- `brand-os/README.md`
+- `legal-os/README.md`
+- `research-os/README.md`
+- `finance-os/README.md`
+- `analytics-os/README.md`
+- `customer-success-os/README.md`
+- `automation-os/README.md`
+- `operations-os/README.md`
+- `knowledge-os/README.md`
+- `template-business-os/README.md`
+
+**Portfolio OS**
+- `portfolio-os/IPPO.md`
+- `portfolio-os/AGRIPATH.md`
+- `portfolio-os/FASTING_APP.md`
+- `portfolio-os/PORTFOLIO_KPI.md`
+
+**Templates（骨格のみ）**
+- `templates/PR_TEMPLATE.md`
+- `templates/ARCHITECTURE_TEMPLATE.md`
+- `templates/BUSINESS_STRATEGY_TEMPLATE.md`
+- `templates/APP_STARTER_TEMPLATE/README.md`
+- `templates/COUNCIL_TEMPLATE/README.md`
+
+**Governance**
+- `governance/DECISION_LOG.md`
+- `governance/BINDING_DECISIONS.md`
+- `governance/CHANGELOG.md`（このファイル）
