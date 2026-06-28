@@ -28,6 +28,56 @@
 
 ---
 
+## [0.3.0] — 2026-06-28
+
+### Added
+
+- `founder-workflow-os/08_PROGRESS_REGISTRY.md` — Founder OS と各アプリの現在地管理
+  - Progress Snapshot Template
+  - IPPO Current Snapshot（Wave2 / PR-044 準備中）
+  - Founder OS Progress Snapshot（v0.3）
+  - Portfolio Table（IPPO / AgriPath / Imaging Agriculture / Founder OS）
+  - Update Rule（PR完了時・Stage変更時など）
+
+- `founder-workflow-os/09_DECISION_LOG.md` — Founder 判断の Append-Only 記録
+  - Decision Log Template
+  - DLOG-001: Founder OS を独立リポジトリで管理する
+  - DLOG-002: PR Generator OS を全アプリ共通の Development OS として管理する
+  - DLOG-003: Council Generator OS / Architecture Generator OS は後回しにする
+  - DLOG-004: Progress Registry / Decision Log 作成後に IPPO 開発へ戻る
+  - DLOG-005: Progress Registry / Decision Log は IPPO Governing Documents ではない
+
+### Changed
+
+- `founder-workflow-os/README.md` — Progress Registry / Decision Log の説明と IPPO PR-044 への戻り方を追記
+- `CANONICAL_SOURCE.md` — Progress Registry / Decision Log のエントリを追加、権限定義（記録のみ / Binding Authority なし）を明文化
+
+### Notes
+
+- Progress Registry と Decision Log は IPPO の設計・ロードマップ・Architecture を変更しない
+- これらは状態管理と意思決定記録のための Founder OS 側ドキュメント
+- 次のアクション: IPPO PR-044 の実装に戻る
+
+---
+
+## [0.2.0] — 2026-06-27
+
+### Added
+
+**PR Generator OS** (`development-os/pr-generator-os/`)
+- `README.md` — v0.2、フロー図、Validation 前提条件
+- `01_PR_PROMPT_TEMPLATE.md` 〜 `14_PR_SCOPE_VALIDATOR.md`（14ファイル）
+- `examples/IPPO_PR044_EXAMPLE.md`
+- `examples/GENERIC_DOMAIN_PR_EXAMPLE.md`
+
+**Founder Workflow OS** (`founder-workflow-os/`)
+- `README.md` — 水平オーケストレーターとして位置づけ
+- `01_FOUNDER_WORKFLOW.md` 〜 `07_ASSET_ACCUMULATION_SYSTEM.md`（7ファイル）
+- `examples/IPPO_WORKFLOW.md`
+- `examples/GENERIC_APP_WORKFLOW.md`
+
+---
+
 ## [0.1.0] — 2026-06-27
 
 ### Added

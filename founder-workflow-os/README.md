@@ -115,21 +115,56 @@ Portfolio → Next App
 
 ---
 
+## Progress Registry と Decision Log について
+
+### 08_PROGRESS_REGISTRY.md — 現在地管理
+
+現在どのステージ・どのPR・どのフェーズにいるかを記録する文書です。
+
+- Founder OS 全体の進捗
+- IPPO / AgriPath / Imaging Agriculture などの Portfolio 状態
+- 迷子防止のための現在地スナップショット
+
+**これは IPPO の設計変更文書ではありません。**
+
+### 09_DECISION_LOG.md — Founder 判断履歴
+
+Founder の重要判断を Append-Only で記録する文書です。
+
+- なぜその判断をしたかを残す
+- 将来の判断を再評価するための参照元
+- Binding Decision や Council への昇格候補の候補
+
+**これも IPPO の設計変更文書ではありません。**
+
+### IPPO PR-044〜075 への戻り方
+
+この 2つのドキュメントは、IPPO 本来の開発に戻るための準備として作成されました。
+
+1. `08_PROGRESS_REGISTRY.md` で IPPO の現在地（PR-044）を確認する
+2. `development-os/pr-generator-os/02_PR_INPUT_SHEET.md` で PR-044 の Input Sheet を完成させる
+3. Validation 4種（12〜14 + 06）を実行して全 PASS を確認する
+4. PR-044 の実装を開始する
+
+---
+
 ## ファイル構成
 
 ```
 founder-workflow-os/
-├── README.md                    ← このファイル
-├── 01_FOUNDER_WORKFLOW.md       ← 23ステージの標準フロー定義
-├── 02_STAGE_GATE.md             ← Go/No-Go 条件
-├── 03_DECISION_CHECKPOINTS.md   ← Founder判断ポイント
-├── 04_APP_LIFECYCLE.md          ← アプリのライフサイクル定義
-├── 05_FOUNDER_WEEKLY_SYSTEM.md  ← 週間ルーティン設計
-├── 06_PORTFOLIO_MANAGEMENT.md   ← 複数アプリ管理の基準
+├── README.md                       ← このファイル
+├── 01_FOUNDER_WORKFLOW.md          ← 23ステージの標準フロー定義
+├── 02_STAGE_GATE.md                ← Go/No-Go 条件
+├── 03_DECISION_CHECKPOINTS.md      ← Founder判断ポイント
+├── 04_APP_LIFECYCLE.md             ← アプリのライフサイクル定義
+├── 05_FOUNDER_WEEKLY_SYSTEM.md     ← 週間ルーティン設計
+├── 06_PORTFOLIO_MANAGEMENT.md      ← 複数アプリ管理の基準
 ├── 07_ASSET_ACCUMULATION_SYSTEM.md ← 資産蓄積の体系
+├── 08_PROGRESS_REGISTRY.md         ← 現在地管理（Founder OS / 各アプリ）
+├── 09_DECISION_LOG.md              ← Founder判断履歴（Append-Only）
 └── examples/
-    ├── IPPO_WORKFLOW.md         ← IPPO での Workflow 適用例
-    └── GENERIC_APP_WORKFLOW.md  ← 汎用SaaSでの適用例
+    ├── IPPO_WORKFLOW.md            ← IPPO での Workflow 適用例
+    └── GENERIC_APP_WORKFLOW.md     ← 汎用SaaSでの適用例
 ```
 
 ---
