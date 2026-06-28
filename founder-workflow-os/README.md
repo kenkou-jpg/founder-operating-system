@@ -119,23 +119,32 @@ Portfolio → Next App
 
 ### 08_PROGRESS_REGISTRY.md — 現在地管理
 
-現在どのステージ・どのPR・どのフェーズにいるかを記録する文書です。
+**「Founder が今どこにいるか」** を一目で分かるようにする文書です。
 
-- Founder OS 全体の進捗
-- IPPO / AgriPath / Imaging Agriculture などの Portfolio 状態
-- 迷子防止のための現在地スナップショット
+2層構造で管理します。
+- **Live Progress** — 常に最新状態のみ保持（履歴は残さない）
+- **Milestone History** — Phase / Wave / Release 完了時のみ追記（PR 単位では追加しない）
 
-**これは IPPO の設計変更文書ではありません。**
+**これは IPPO の設計変更文書ではありません。開発履歴を書く文書でもありません。**
 
 ### 09_DECISION_LOG.md — Founder 判断履歴
 
 Founder の重要判断を Append-Only で記録する文書です。
 
-- なぜその判断をしたかを残す
-- 将来の判断を再評価するための参照元
-- Binding Decision や Council への昇格候補の候補
+更新は以下の条件に該当する場合のみ:
+Roadmap変更 / Architecture変更 / Governing Document変更 / Business Strategy変更 / 新OS追加 / 新テンプレート追加 / Binding Decision候補
 
 **これも IPPO の設計変更文書ではありません。**
+
+### 責務分離
+
+| ドキュメント | 責務 |
+|------------|------|
+| Progress Registry | 現在地 |
+| Decision Log | Founder 判断 |
+| ARCHITECTURE.md（各リポジトリ）| 設計 |
+| ROADMAP.md（各リポジトリ）| 順序 |
+| BINDING_DECISIONS.md | 仕様 |
 
 ### IPPO PR-044〜075 への戻り方
 

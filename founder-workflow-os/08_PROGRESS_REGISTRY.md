@@ -1,26 +1,33 @@
 # 08 — Progress Registry
 
 > Founder Operating System と各アプリの現在地を一元管理する。
-> この文書は「状態管理」のための文書であり、設計変更を行う文書ではありません。
+> この文書は「現在地」を一目で分かるようにするための文書であり、開発履歴を書く文書ではありません。
 
 ---
 
 ## Purpose
 
-Progress Registry は以下の目的のために存在します。
+Progress Registry は **「Founder が今どこにいるか」** を常に明確にするために存在します。
 
-1. **現在地管理** — 今どのステージ・どのPRにいるかを常に明確にする
-2. **PR進捗管理** — 完了・進行中・次のPRを記録する
-3. **Stage管理** — Founder Workflow OS の23ステージ上のどこにいるかを記録する
-4. **Founder OS進捗管理** — Founder Operating System 自体の開発状況を記録する
-5. **Portfolio管理** — 全アプリの状態を横断的に把握する
-6. **迷子防止** — 長期開発・複数プロジェクト並走時に「どこまでやったか」を失わない
+1. **現在地管理** — 今どのステージ・どのPRにいるかを一目で把握する
+2. **マイルストーン管理** — Phase / Wave 完了などの重要節目だけを記録する
+3. **迷子防止** — 70PR を超える長期開発でも現在地を失わない
+4. **Portfolio管理** — 全アプリの状態を横断的に把握する
+
+---
+
+## Architecture（2層構造）
+
+```
+Progress Registry
+│
+├── Live Progress      ← 常に最新状態のみ。履歴を残さない。
+└── Milestone History  ← Phase / Wave / Release 完了時のみ追記。PR単位では追加しない。
+```
 
 ---
 
 ## Scope
-
-Progress Registry が扱う対象:
 
 - **Founder Operating System** — OS自体の進捗
 - **IPPO** — ウォーキング習慣化アプリ
@@ -33,41 +40,47 @@ Progress Registry が扱う対象:
 
 ## Non-goals
 
-Progress Registry は以下を行いません。
-
 - ❌ Product Strategy を変更しない
 - ❌ Architecture を変更しない
 - ❌ Roadmap を変更しない
 - ❌ PR Scope を変更しない
 - ❌ Binding Decision を変更しない
 - ❌ IPPO の設計判断を上書きしない
-- ❌ Governing Documents の代替にはならない
-
-**これは記録文書です。設計・判断文書ではありません。**
+- ❌ 開発履歴・PR一覧を蓄積しない（それは `11_PR_RESPONSIBILITY_REGISTRY.md` の責務）
 
 ---
 
-## Progress Snapshot Template
+## 責務分離
 
-新規プロジェクトまたは状態更新時は以下のテンプレートを使用してください。
+| ドキュメント | 責務 |
+|------------|------|
+| **Progress Registry（このファイル）** | 現在地 |
+| `09_DECISION_LOG.md` | Founder 判断 |
+| `docs/ARCHITECTURE.md`（各リポジトリ）| 設計 |
+| `docs/ROADMAP.md`（各リポジトリ）| 順序 |
+| `governance/BINDING_DECISIONS.md` | 仕様・拘束力のある決定 |
+| `development-os/pr-generator-os/11_PR_RESPONSIBILITY_REGISTRY.md` | PR完了履歴 |
+
+---
+
+## ① Live Progress
+
+> 常に最新状態だけを保持する。過去の内容は上書きする。履歴は残さない。
+
+### Live Progress Template
 
 ```
 Project:
-Current Stage:        # S01〜S23（01_FOUNDER_WORKFLOW.md 参照）
-Current Phase:        # Discovery / Design / Build / Launch / Asset / Scale
-Current PR:           # PR-XXX
-Previous PR:          # PR-XXX（完了済み）
-Next PR:              # PR-XXX（予定）
-Completion:           # X / Y PRs completed in current Wave/Phase
-Status:               # Active / On Hold / Ready to Resume / Blocked
-Last Updated:         # YYYY-MM-DD
-Blocking Issues:      # なし or 内容
-Next Action:          # 次にすべき具体的なアクション
+Current Stage:      # S01〜S23（01_FOUNDER_WORKFLOW.md 参照）
+Current Phase:      # Discovery / Design / Build / Launch / Asset / Scale
+Current PR:         # PR-XXX
+Next PR:            # PR-XXX（予定）
+Completion %:       # Wave / Phase の完了率（例: 3/5 PRs = 60%）
+Status:             # Active / On Hold / Blocked
+Last Updated:       # YYYY-MM-DD
 ```
 
----
-
-## IPPO — Current Snapshot
+### IPPO — Live Progress
 
 *最終更新: 2026-06-28*
 
@@ -75,97 +88,153 @@ Next Action:          # 次にすべき具体的なアクション
 Project: IPPO
 Current Stage: S14 PR Development
 Current Phase: Build
-Lifecycle: MVP
-Wave: Wave2
-Phase: Phase A Infrastructure Migration
-
-Completed PRs:
-  - PR-041: NetworkSignal Repository V2 — Interface / Adapter / Factory / Persistence / Migration
-  - PR-042: Supabase Persistence Foundation — NetworkSignal + EventStore
-  - PR-043: Emotion Signal Generation Foundation — Rule Engine + initializeSession
-
-Current PR: PR-044 (planning)
+Wave: Wave2 / Phase A Infrastructure Migration
+Current PR: PR-044
 Next PR: PR-045
-
-Status: Ready to resume IPPO development
-
-Blocking Issues: なし
-
-Founder OS Support:
-  - PR Generator OS: completed (v0.2)
-  - Founder Workflow OS: completed (v0.1)
-  - Progress Registry: created (v0.3)
-  - Decision Log: created (v0.3)
-
-Next Action: PR-044 の Input Sheet を完成させ、Validation 4種を実行して実装開始
+Completion %: 3 / ~35 PRs (Wave2) ≈ 9%
+Status: Active
+Last Updated: 2026-06-28
 ```
 
----
-
-## Founder Operating System — Current Snapshot
+### Founder Operating System — Live Progress
 
 *最終更新: 2026-06-28*
 
 ```
-Founder Operating System
-
+Project: Founder Operating System
+Current Stage: —
+Current Phase: —
 Version: v0.3
+Current Focus: Progress Registry v1.1 更新
+Next: IPPO PR-044〜075 完了後に再開
+Status: Active（IPPO 開発中は最小限の更新）
+Last Updated: 2026-06-28
+```
 
-Completed:
-  - Foundation (v0.1)
-    - README.md / FOUNDER_PHILOSOPHY.md / OPERATING_PRINCIPLES.md
-    - CANONICAL_SOURCE.md / ROADMAP.md
-    - 12 Domain OS READMEs
-    - Portfolio OS
-    - Templates / Governance
+---
 
-  - PR Generator OS (v0.2)
-    - 14ファイル (01〜14) + 2 examples
-    - 責務衝突防止の Validation 4種
+## ② Milestone History
 
-  - Founder Workflow OS (v0.1)
-    - README / 01〜07 / examples (IPPO / Generic)
+> Phase / Wave / Release 完了など、重要節目のみ追記する。PR 単位では追加しない。
 
-  - Progress Registry (v0.3)       ← NOW
-  - Decision Log (v0.3)            ← NOW
+### Milestone History Template（追記用）
 
-Now: v0.3 — Progress Registry / Decision Log
+```
+### [YYYY-MM-DD] [Project] — [Milestone Name]
 
-Later (after IPPO PR-044〜075):
-  - Workflow Automation
-  - Council Generator OS
-  - Architecture Generator OS
+- Milestone: Phase Complete / Wave Complete / Beta Release / Official Release / Major Council
+- Scope: PR-XXX 〜 PR-XXX
+- Notes: （任意）
+```
+
+### IPPO — Milestone History
+
+*Wave2 開始前の状態。Wave2 Phase A 完了時に最初のエントリを追記する。*
+
+```
+（Wave2 Phase A 完了時に追記予定）
 ```
 
 ---
 
 ## Portfolio Table
 
-*月次更新。最終更新: 2026-06-28*
+*月次更新。Current Focus / Current Stage / Current PR のみ更新する。最終更新: 2026-06-28*
 
-| Project | Status | Stage | Lifecycle | Current Focus | Next Action | Repository | Notes |
-|---------|--------|-------|-----------|--------------|-------------|-----------|-------|
-| IPPO | 開発中 | S14 PR Dev | MVP | Wave2 PR-044 | PR-044 実装開始 | kenkou-jpg/ippo | Wave2 Phase A |
-| AgriPath | 計画中 | S01 Idea | Idea | 概念段階 | IPPO安定後に着手 | — | 農業×SaaS |
-| Imaging Agriculture | 研究中 | S02 Problem Discovery | Research | リサーチ | 研究継続 | — | 学術・研究フェーズ |
-| Fasting App | 概念 | S01 Idea | Idea | 概念段階 | IPPO安定後に着手 | — | ヘルスケア |
-| Founder Operating System | 開発中 | — | — | v0.3 Progress Registry / Decision Log | IPPO PR-044完了後に再開 | kenkou-jpg/founder-operating-system | Markdown only |
+| Project | Status | Stage | Lifecycle | Current PR | Next Action | Repository | Notes |
+|---------|--------|-------|-----------|-----------|-------------|-----------|-------|
+| IPPO | 開発中 | S14 PR Dev | MVP | PR-044 | PR-044 実装開始 | kenkou-jpg/ippo | Wave2 Phase A |
+| AgriPath | 計画中 | S01 Idea | Idea | — | IPPO 安定後に着手 | — | 農業×SaaS |
+| Imaging Agriculture | 研究中 | S02 Problem Discovery | Research | — | 研究継続 | — | 学術・研究フェーズ |
+| Fasting App | 概念 | S01 Idea | Idea | — | IPPO 安定後に着手 | — | ヘルスケア |
+| Founder Operating System | 開発中 | — | — | — | IPPO PR-044 完了後に再開 | kenkou-jpg/founder-operating-system | Markdown only |
 
 ---
 
 ## Update Rule
 
-Progress Registry は以下のタイミングで更新してください。
+### Live Progress — 更新タイミングと内容
 
-| トリガー | 更新内容 |
-|---------|---------|
-| **PR完了時** | Completed PRs に追加、Current PR / Next PR を更新 |
-| **Council完了時** | 関連するプロジェクトの Status・Next Action を更新 |
-| **Stage変更時** | Current Stage / Current Phase を更新 |
-| **Founder判断時** | Status / Blocking Issues / Next Action を更新 |
-| **次アプリ開始時** | Portfolio Table に新プロジェクトを追加 |
+| トリガー | 更新フィールド |
+|---------|-------------|
+| PR 完了時 | `Current PR` → `Next PR` へ進める、`Completion %` を更新、`Last Updated` を更新 |
+| Current PR 変更時 | `Current PR` / `Next PR` を更新 |
+| Stage 変更時 | `Current Stage` / `Current Phase` を更新 |
+| Phase 変更時 | `Current Phase` / `Wave` を更新 |
 
-**更新は追記・上書きのいずれでも可。ただし Portfolio Table は現在値で管理すること。**
+**Live Progress に過去 PR の一覧を書かない。それは `11_PR_RESPONSIBILITY_REGISTRY.md` へ。**
+
+### Milestone History — 更新タイミング
+
+以下のいずれかの場合のみ追記する。PR 単位では追加しない。
+
+```
+□ Phase Complete
+□ Wave Complete
+□ Major Council Complete
+□ Beta Release
+□ Official Release
+□ Lifecycle Change（MVP → PMF など）
+```
+
+### Portfolio Table — 更新タイミング
+
+```
+□ Current PR が変わったとき
+□ Stage が変わったとき
+□ 新しいアプリが追加されたとき
+□ Status が変わったとき（開発中 → 運営中 など）
+```
+
+---
+
+## Claude Code 運用ルール
+
+PR 完了後、Claude Code は以下の順序で自動判断すること。
+
+### Step 1 — Live Progress の更新
+
+```
+PR 完了 → Live Progress を更新する
+  Current PR: 完了した PR → 次の PR へ
+  Completion % を更新
+  Last Updated を更新
+```
+
+### Step 2 — Milestone History の判断
+
+```
+Phase が完了した？
+  Yes → Milestone History に追記する
+  No  → 更新しない（「Milestone History 更新不要」と判断）
+```
+
+### Step 3 — Decision Log の判断
+
+```
+以下のいずれかに該当するか？
+  □ Roadmap 変更
+  □ Architecture 変更
+  □ Governing Document 変更
+  □ Business / Founder Strategy 変更
+  □ 新しい OS 追加
+  □ 新しいテンプレート追加
+  □ Binding Decision 候補
+
+  Yes → Decision Log を更新する
+  No  → 「Decision Log 更新不要」と判断し、更新しない
+```
+
+---
+
+## IPPO 適用例
+
+| タイミング | Live Progress | Milestone History | Decision Log |
+|-----------|-------------|-----------------|-------------|
+| PR-044 完了 | Current PR → PR-045 へ更新 | 更新しない | 更新不要 |
+| PR-045 完了 | Current PR → PR-046 へ更新 | 更新しない | 更新不要 |
+| PR-046〜050 完了（Phase B Complete）| Current PR 更新 | Phase B Complete を追記 | 更新不要 |
+| PR-075 完了（Wave2 Complete）| Current PR 更新、Completion 100% | Wave2 Complete を追記 | Wave2 完了の判断があれば記録 |
 
 ---
 
@@ -174,4 +243,4 @@ Progress Registry は以下のタイミングで更新してください。
 - `01_FOUNDER_WORKFLOW.md` — Stage 定義
 - `06_PORTFOLIO_MANAGEMENT.md` — Portfolio 状態定義
 - `09_DECISION_LOG.md` — Founder 判断の履歴
-- `development-os/pr-generator-os/11_PR_RESPONSIBILITY_REGISTRY.md` — PR 完了記録
+- `development-os/pr-generator-os/11_PR_RESPONSIBILITY_REGISTRY.md` — PR 完了履歴（Append-Only）
