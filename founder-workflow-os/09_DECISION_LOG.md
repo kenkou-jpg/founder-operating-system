@@ -212,6 +212,28 @@ Status: Active
 
 ---
 
+## Update Rule（更新条件）
+
+Decision Log は以下のいずれかに該当した場合のみ更新する。
+
+```
+□ Roadmap 変更
+□ Architecture 変更
+□ Governing Document 変更
+□ Business Strategy 変更
+□ Founder Strategy 変更
+□ 新しい OS 追加
+□ 新しいテンプレート追加
+□ Binding Decision 候補
+```
+
+**上記以外は Decision Log 更新禁止。**
+
+日常的な PR 開発・実装作業・バグ修正・リファクタリングは
+Decision Log を更新しない。
+
+---
+
 ## Review Rule
 
 Decision Log は以下のタイミングで見直してください。
