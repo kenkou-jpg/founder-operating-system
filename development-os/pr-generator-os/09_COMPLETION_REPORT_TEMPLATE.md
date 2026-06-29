@@ -12,6 +12,10 @@
 **Title:** [PRタイトル]
 **Completed:** [YYYY-MM-DD]
 **Wave / Phase:** [Wave X / Phase N]
+**Execution Mode:** FAST_MODE / STANDARD_MODE / FULL_MODE
+**Mode Reason:** [選択理由を1文]
+**Skipped Checks:** [省略したチェック一覧、なければ "None"]
+**Escalation:** なし / あり（[元モード] → [新モード]、理由: [内容]）
 
 ---
 

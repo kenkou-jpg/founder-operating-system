@@ -6,6 +6,26 @@
 
 ---
 
+## Execution Mode
+
+> `00_EXECUTION_DISPATCHER.md` のルールに基づいて選択する。
+
+```yaml
+Execution Mode: ""
+  # FAST_MODE / STANDARD_MODE / FULL_MODE
+
+Mode Reason: ""
+  # モード選択の根拠（1文）
+  # 例: "新 Repository 追加のため STANDARD_MODE"
+  # 例: "Architecture 変更なし・Migration なし → FAST_MODE"
+
+Escalation Required: NO
+  # YES / NO
+  # 実装中にモードを切り替えた場合は YES に変更し、理由を記載
+```
+
+---
+
 ## Project Information
 
 ```yaml

@@ -28,6 +28,31 @@
 
 ---
 
+## [0.4.0] — 2026-06-28
+
+### Added
+
+- `development-os/pr-generator-os/00_EXECUTION_DISPATCHER.md` — PR 開始時に最初に読む Mode 選択ルール
+- `development-os/pr-generator-os/FAST_MODE.md` — 通常 PR 用の低コンテキスト消費モード
+- `development-os/pr-generator-os/STANDARD_MODE.md` — 新 Domain / Service / Event など重要度中 PR 用モード
+- `development-os/pr-generator-os/FULL_MODE.md` — Architecture / Migration / Release など完全監査モード
+
+### Changed
+
+- `development-os/pr-generator-os/README.md` — Execution Mode Dispatcher セクション追加、ファイル構成更新、v0.4 へバージョンアップ
+- `development-os/pr-generator-os/02_PR_INPUT_SHEET.md` — Execution Mode / Mode Reason / Escalation Required フィールド追加
+- `development-os/pr-generator-os/08_DEFINITION_OF_DONE.md` — Execution Mode 確認セクション追加（Mode選択・Mode固有チェック・Escalation確認）
+- `development-os/pr-generator-os/09_COMPLETION_REPORT_TEMPLATE.md` — Execution Mode / Mode Reason / Skipped Checks / Escalation フィールド追加
+- `founder-workflow-os/08_PROGRESS_REGISTRY.md` — Live Progress Template と IPPO Snapshot に Execution Mode Used フィールド追加
+
+### Notes
+
+- モード選択は AI の独自判断ではなく OS ルール（00_EXECUTION_DISPATCHER.md）に基づく
+- 判断に迷う場合は STANDARD_MODE。Security / Privacy / AI / Research / Release は必ず FULL_MODE
+- IPPO PR-044 以降は Execution Dispatcher を使用して実装を開始する
+
+---
+
 ## [0.3.0] — 2026-06-28
 
 ### Added

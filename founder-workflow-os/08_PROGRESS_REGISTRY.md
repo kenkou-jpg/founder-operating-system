@@ -71,13 +71,14 @@ Progress Registry
 
 ```
 Project:
-Current Stage:      # S01〜S23（01_FOUNDER_WORKFLOW.md 参照）
-Current Phase:      # Discovery / Design / Build / Launch / Asset / Scale
-Current PR:         # PR-XXX
-Next PR:            # PR-XXX（予定）
-Completion %:       # Wave / Phase の完了率（例: 3/5 PRs = 60%）
-Status:             # Active / On Hold / Blocked
-Last Updated:       # YYYY-MM-DD
+Current Stage:          # S01〜S23（01_FOUNDER_WORKFLOW.md 参照）
+Current Phase:          # Discovery / Design / Build / Launch / Asset / Scale
+Current PR:             # PR-XXX
+Next PR:                # PR-XXX（予定）
+Completion %:           # Wave / Phase の完了率（例: 3/5 PRs = 60%）
+Execution Mode Used:    # FAST_MODE / STANDARD_MODE / FULL_MODE（直近 PR で使用したモード）
+Status:                 # Active / On Hold / Blocked
+Last Updated:           # YYYY-MM-DD
 ```
 
 ### IPPO — Live Progress
@@ -92,6 +93,7 @@ Wave: Wave2 / Phase A Infrastructure Migration
 Current PR: PR-044
 Next PR: PR-045
 Completion %: 3 / ~35 PRs (Wave2) ≈ 9%
+Execution Mode Used: （PR-044 実装時に記入）
 Status: Active
 Last Updated: 2026-06-28
 ```

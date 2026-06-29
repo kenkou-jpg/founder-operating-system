@@ -6,6 +6,14 @@
 
 ---
 
+## Execution Mode 確認
+
+- [ ] **Execution Mode が選択されている**（`00_EXECUTION_DISPATCHER.md` のルールに基づく）
+- [ ] **Mode 固有の必須チェックがすべて満たされている**（FAST / STANDARD / FULL それぞれの必須リスト参照）
+- [ ] **Escalation 確認済み**（実装中にモード変更が必要な事態が起きていないか）
+
+---
+
 ## 必須条件（すべてクリアすること）
 
 ### 1. Scope完了
