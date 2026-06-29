@@ -28,6 +28,31 @@
 
 ---
 
+## [0.4.2] — 2026-06-29
+
+### Added
+
+- `development-os/pr-generator-os/SMART_DOCUMENT_LOADING.md` — Mode 別文書読込ルール（FAST/STANDARD/FULL + Escalation Loading）
+- `development-os/pr-generator-os/REPORT_OPTIMIZATION.md` — Completion Report の Mode 別最適化（FAST:20行 / STANDARD:50行 / FULL:詳細可・重複禁止）
+- `development-os/pr-generator-os/TOKEN_OPTIMIZATION.md` — トークン消費の行動規範（Must / Must Not / Test / Output 最適化）
+
+### Changed
+
+- `00_EXECUTION_DISPATCHER.md` — Mode 決定後の参照順序に Optimization Pack 3ファイルを追加
+- `FAST_MODE.md` — Optimization Pack 必須参照セクション追加
+- `STANDARD_MODE.md` — Optimization Pack 必須参照セクション追加
+- `FULL_MODE.md` — Optimization Pack 必須参照セクション追加
+- `09_COMPLETION_REPORT_TEMPLATE.md` — REPORT_OPTIMIZATION.md 参照注記追加
+- `README.md` — Optimization Pack v0.4.2 セクション・ファイル構成・バージョン表記更新
+
+### Notes
+
+- 削ってよいもの: 長文要約・全文書一括読込・重複説明・毎回の全 BD 列挙・既知失敗の深掘り
+- 削ってはいけないもの: Scope確認・BD重大違反確認・Architecture Guard・Test・Build・PR責務分離
+- Decision Log 更新条件・Progress Registry 方針・Founder OS Freeze Rule は変更なし
+
+---
+
 ## [0.4.1-dlog] — 2026-06-29
 
 ### Added

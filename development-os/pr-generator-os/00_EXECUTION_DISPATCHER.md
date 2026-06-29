@@ -241,8 +241,24 @@ Progress Registry Live Progress に Execution Metadata を転記
 
 ---
 
+## Mode 決定後に読む文書（順序厳守）
+
+Mode を決定したら、必ず以下の順序で参照する。
+
+```
+1. SMART_DOCUMENT_LOADING.md  ← 読む文書の絞り込みルール
+2. TOKEN_OPTIMIZATION.md      ← トークン消費の行動規範
+3. 選択した MODE.md           ← 必須チェックリスト
+4. REPORT_OPTIMIZATION.md     ← Completion Report の出力形式
+```
+
+---
+
 ## 関連ドキュメント
 
+- `SMART_DOCUMENT_LOADING.md` — Mode 別文書読込ルール（v0.4.2）
+- `TOKEN_OPTIMIZATION.md` — トークン消費の行動規範（v0.4.2）
+- `REPORT_OPTIMIZATION.md` — Completion Report の最適化（v0.4.2）
 - `FAST_MODE.md` — Fast Mode の必須チェックと出力形式
 - `STANDARD_MODE.md` — Standard Mode の必須チェックと出力形式
 - `FULL_MODE.md` — Full Mode の必須チェックと出力形式

@@ -5,6 +5,17 @@
 
 ---
 
+## Optimization Pack（必須参照）
+
+```
+This mode must follow:
+- SMART_DOCUMENT_LOADING.md  （必須文書リストに従い読む）
+- TOKEN_OPTIMIZATION.md      （トークン消費の行動規範）
+- REPORT_OPTIMIZATION.md     （FULL Summary 形式・重複説明禁止）
+```
+
+---
+
 ## 用途
 
 ```

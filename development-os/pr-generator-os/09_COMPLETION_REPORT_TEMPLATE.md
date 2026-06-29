@@ -3,6 +3,11 @@
 > PR完了レポートのテンプレート。
 > AIが実装を完了したら、このテンプレートに沿ってレポートを提出する。
 > レポートはそのまま `governance/DECISION_LOG.md` やHandoff文書に転記できる品質で書く。
+>
+> **Use REPORT_OPTIMIZATION.md. Report length depends on Execution Mode.**
+> - FAST_MODE: FAST Summary 形式、最大 20 行
+> - STANDARD_MODE: STANDARD Summary 形式、最大 50 行
+> - FULL_MODE: FULL Summary 形式、重複説明のみ禁止
 
 ---
 

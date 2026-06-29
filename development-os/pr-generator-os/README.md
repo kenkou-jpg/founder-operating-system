@@ -24,12 +24,30 @@ Dispatcher（00_EXECUTION_DISPATCHER.md）
   ↓
 Execution Metadata 生成（Mode / Reason / Version / Escalation / Generated At）
   ↓
+SMART_DOCUMENT_LOADING.md（必要文書のみ読む）
+  ↓
+TOKEN_OPTIMIZATION.md（行動規範確認）
+  ↓
 Implementation（FAST_MODE / STANDARD_MODE / FULL_MODE）
   ↓
-Completion Report（Execution Metadata を転記）
+Completion Report（REPORT_OPTIMIZATION.md に従って Mode 別短縮）
   ↓
 Progress Registry Live Progress（Execution Metadata を転記）
 ```
+
+### Optimization Pack v0.4.2
+
+Claude Code の 5時間制限・コンテキスト消費に対応するための最適化ルール。
+**品質を下げずに、不要な処理だけを削減する。**
+
+| ファイル | 目的 |
+|---------|------|
+| `SMART_DOCUMENT_LOADING.md` | Mode 別の文書読込ルール（必要文書のみ読む）|
+| `REPORT_OPTIMIZATION.md` | Completion Report の Mode 別行数制限（FAST:20行 / STANDARD:50行）|
+| `TOKEN_OPTIMIZATION.md` | トークン消費の行動規範（Must / Must Not / Test / Output 定義）|
+
+**削ってよいもの:** 長文要約・全文書一括読込・重複説明・毎回の全 BD 列挙・既知失敗の深掘り
+**削ってはいけないもの:** Scope 確認・BD 重大違反確認・Architecture Guard・Test・Build・PR 責務分離
 
 ---
 
@@ -145,6 +163,11 @@ pr-generator-os/
 ├── STANDARD_MODE.md                   ← Standard Mode 必須チェック・出力形式
 ├── FULL_MODE.md                       ← Full Mode 必須チェック・出力形式
 │
+├── [Optimization Pack v0.4.2]
+├── SMART_DOCUMENT_LOADING.md          ← Mode別 文書読込ルール
+├── REPORT_OPTIMIZATION.md             ← Completion Report 行数最適化
+├── TOKEN_OPTIMIZATION.md              ← トークン消費の行動規範
+│
 ├── [Input]
 ├── 02_PR_INPUT_SHEET.md               ← PR情報の入力シート
 │
@@ -183,9 +206,11 @@ pr-generator-os/
 | v0.1 | 基本テンプレート（ファイル01〜10 + examples） |
 | v0.2 | Validation強化（ファイル11〜14追加） |
 | v0.4 | Execution Mode Dispatcher 追加（FAST/STANDARD/FULL） |
+| v0.4.1 | Execution Metadata 自動ログ追加 |
+| v0.4.2 | Optimization Pack 追加（Smart Loading / Report / Token）|
 | v0.5 | プロジェクト別カスタマイズレイヤー追加 |
 | v1.0 | 実運用で検証済み、AgriPath等でも使用 |
 
-**現在: v0.4**
+**現在: v0.4.2**
 
 変更は `governance/CHANGELOG.md` に記録します。
