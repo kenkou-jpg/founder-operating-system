@@ -74,6 +74,22 @@ Next: PR-XXX — [次PRタイトル]
 
 ---
 
+## Execution Metadata（FAST_MODE 完了時に生成）
+
+```
+## Execution Metadata
+
+Mode:               FAST
+Reason:             [選択理由を1文]
+Dispatcher Version: v0.4
+Escalation:         NO
+Generated At:       YYYY-MM-DD
+```
+
+**この Metadata を Completion Report と Progress Registry に引き継ぐこと。**
+
+---
+
 ## Escalation トリガー
 
 以下が判明したら STANDARD_MODE または FULL_MODE へ切り替える。

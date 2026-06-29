@@ -28,6 +28,33 @@
 
 ---
 
+## [0.4.1] — 2026-06-29
+
+### Added
+
+- **Execution Metadata** — Dispatcher が Mode 決定後に必ず生成する構造化レコード
+  - フィールド: `Mode / Reason / Dispatcher Version / Escalation / Generated At`
+  - Escalation 発生時は `Previous Mode / Current Mode / Escalation Reason` を追記
+
+### Changed
+
+- `00_EXECUTION_DISPATCHER.md` — Execution Metadata 生成仕様追加、Execution Flow 更新（Dispatcher → Metadata → Implementation → Completion Report → Progress Registry）
+- `FAST_MODE.md` — Execution Metadata テンプレート追加
+- `STANDARD_MODE.md` — Execution Metadata テンプレート追加
+- `FULL_MODE.md` — Execution Metadata テンプレート追加
+- `09_COMPLETION_REPORT_TEMPLATE.md` — `Execution Metadata` セクション追加（Dispatcher から転記）
+- `08_DEFINITION_OF_DONE.md` — Execution Metadata 生成・転記確認の 3項目追加
+- `README.md` — Execution Flow 図追加
+- `founder-workflow-os/08_PROGRESS_REGISTRY.md` — Live Progress Template に `Dispatcher Version / Escalation` フィールド追加
+
+### Notes
+
+- Execution Metadata は Completion Report と Progress Registry に必ず引き継ぐ
+- これにより「このPRをどのModeで実装したか」が後から追跡可能になる
+- Decision Log 更新条件・Progress Registry の Live/Milestone 設計は変更なし
+
+---
+
 ## [0.4.0] — 2026-06-28
 
 ### Added

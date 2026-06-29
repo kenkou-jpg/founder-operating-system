@@ -76,7 +76,9 @@ Current Phase:          # Discovery / Design / Build / Launch / Asset / Scale
 Current PR:             # PR-XXX
 Next PR:                # PR-XXX（予定）
 Completion %:           # Wave / Phase の完了率（例: 3/5 PRs = 60%）
-Execution Mode Used:    # FAST_MODE / STANDARD_MODE / FULL_MODE（直近 PR で使用したモード）
+Execution Mode Used:    # FAST / STANDARD / FULL（直近 PR で使用したモード）
+Dispatcher Version:     # v0.4
+Escalation:             # NO / YES（YES の場合: 元Mode → 現Mode）
 Status:                 # Active / On Hold / Blocked
 Last Updated:           # YYYY-MM-DD
 ```
@@ -94,6 +96,8 @@ Current PR: PR-044
 Next PR: PR-045
 Completion %: 3 / ~35 PRs (Wave2) ≈ 9%
 Execution Mode Used: （PR-044 実装時に記入）
+Dispatcher Version: v0.4
+Escalation: NO（PR-044 実装時に更新）
 Status: Active
 Last Updated: 2026-06-28
 ```

@@ -17,6 +17,20 @@
 **モード選択は AI の独自判断ではなく、`00_EXECUTION_DISPATCHER.md` の OS ルールに基づく。**
 **判断に迷う場合は `STANDARD_MODE`。Security / Privacy / AI / Research / Release は必ず `FULL_MODE`。**
 
+### Execution Flow
+
+```
+Dispatcher（00_EXECUTION_DISPATCHER.md）
+  ↓
+Execution Metadata 生成（Mode / Reason / Version / Escalation / Generated At）
+  ↓
+Implementation（FAST_MODE / STANDARD_MODE / FULL_MODE）
+  ↓
+Completion Report（Execution Metadata を転記）
+  ↓
+Progress Registry Live Progress（Execution Metadata を転記）
+```
+
 ---
 
 ## PR Generator OSとは何か

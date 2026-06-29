@@ -53,6 +53,25 @@
 
 ---
 
+## Execution Metadata（FULL_MODE 完了時に生成）
+
+```
+## Execution Metadata
+
+Mode:               FULL
+Reason:             [選択理由を1文]
+Dispatcher Version: v0.4
+Escalation:         NO / YES
+  Previous Mode:    FAST / STANDARD（Escalation YES の場合のみ）
+  Current Mode:     FULL（Escalation YES の場合のみ）
+  Escalation Reason:[理由]（Escalation YES の場合のみ）
+Generated At:       YYYY-MM-DD
+```
+
+**この Metadata を Completion Report と Progress Registry に引き継ぐこと。**
+
+---
+
 ## 出力形式
 
 FULL_MODE では以下の完全なサマリーを出力する。

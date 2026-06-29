@@ -19,6 +19,25 @@
 
 ---
 
+### Execution Metadata
+
+> `00_EXECUTION_DISPATCHER.md` で生成した Execution Metadata をそのまま転記する。
+
+```
+## Execution Metadata
+
+Mode:               FAST / STANDARD / FULL
+Reason:             [モード選択の根拠]
+Dispatcher Version: v0.4
+Escalation:         NO / YES
+  Previous Mode:    （YES の場合のみ）
+  Current Mode:     （YES の場合のみ）
+  Escalation Reason:（YES の場合のみ）
+Generated At:       YYYY-MM-DD
+```
+
+---
+
 ### Summary
 
 （1〜3文でPRの成果を要約する。技術的な説明より「何が実現できるようになったか」を書く。）

@@ -142,6 +142,48 @@ Escalation Required: yes / no
 
 ---
 
+## Execution Metadata（Mode 決定後に必ず生成）
+
+Mode 選択後、Claude Code は必ず以下の **Execution Metadata** を生成する。
+この Metadata を Completion Report と Progress Registry へそのまま引き継ぐ。
+
+```
+## Execution Metadata
+
+Mode:               FAST / STANDARD / FULL
+Reason:             （1文：モード選択の根拠）
+Dispatcher Version: v0.4
+Escalation:         NO / YES
+  Previous Mode:    （Escalation YES の場合のみ）FAST / STANDARD
+  Current Mode:     （Escalation YES の場合のみ）STANDARD / FULL
+  Escalation Reason:（Escalation YES の場合のみ：理由）
+Generated At:       YYYY-MM-DD
+```
+
+### Escalation が発生した場合の記録例
+
+```
+## Execution Metadata
+
+Mode:               STANDARD
+Reason:             Repository Migration Required — escalated from FAST
+Dispatcher Version: v0.4
+Escalation:         YES
+  Previous Mode:    FAST
+  Current Mode:     STANDARD
+  Escalation Reason: 実装中に新 Repository が必要であることが判明した
+Generated At:       2026-06-29
+```
+
+### Execution Metadata の引き継ぎ先
+
+| 引き継ぎ先 | 対応フィールド |
+|-----------|-------------|
+| `09_COMPLETION_REPORT_TEMPLATE.md` の `Execution Mode` セクション | Mode / Reason / Dispatcher Version / Escalation / Skipped Checks |
+| `08_PROGRESS_REGISTRY.md` の Live Progress | Execution Mode Used / Dispatcher Version / Escalation |
+
+---
+
 ## Escalation Rule
 
 実装中に以下が判明した場合、途中で上位モードに切り替える。
@@ -166,7 +208,7 @@ STANDARD → FULL:
 
 ---
 
-## Quick Reference
+## Quick Reference — Execution Flow
 
 ```
 PR 開始
@@ -186,7 +228,15 @@ Mode Selection Rules を確認
   ↓
 Execution Mode Decision を出力
   ↓
+Execution Metadata を生成（必須）
+  ↓
 対応する MODE.md を読んで実装開始
+  ↓
+（Escalation 発生時は Metadata を更新して上位 MODE.md へ）
+  ↓
+Completion Report に Execution Metadata を転記
+  ↓
+Progress Registry Live Progress に Execution Metadata を転記
 ```
 
 ---

@@ -11,6 +11,9 @@
 - [ ] **Execution Mode が選択されている**（`00_EXECUTION_DISPATCHER.md` のルールに基づく）
 - [ ] **Mode 固有の必須チェックがすべて満たされている**（FAST / STANDARD / FULL それぞれの必須リスト参照）
 - [ ] **Escalation 確認済み**（実装中にモード変更が必要な事態が起きていないか）
+- [ ] **Execution Metadata が生成されている**（Mode / Reason / Dispatcher Version / Escalation / Generated At）
+- [ ] **Completion Report に Execution Metadata が転記されている**
+- [ ] **Progress Registry Live Progress に Execution Metadata が転記されている**
 
 ---
 
