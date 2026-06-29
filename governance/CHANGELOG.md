@@ -28,6 +28,22 @@
 
 ---
 
+## [0.4.1-dlog] — 2026-06-29
+
+### Added
+
+- `founder-workflow-os/09_DECISION_LOG.md` — DLOG-006: Founder Capability OS 構想を Append-Only で記録
+  - Wave2 期間中は Founder OS Freeze Rule により実装禁止
+  - Wave2 完了後（PR-075 以降）に Council + Founder 承認を経て設計候補へ昇格予定
+
+### Notes
+
+- Founder Capability OS の実装は行っていない
+- 新ディレクトリ・新 OS・構造変更は一切行っていない
+- Wave2 ロードマップ変更なし
+
+---
+
 ## [0.4.1] — 2026-06-29
 
 ### Added

@@ -234,6 +234,90 @@ Decision Log を更新しない。
 
 ---
 
+### DLOG-006 — Founder Capability OS 構想を Wave2 完了後の設計候補として記録する
+
+```
+Decision ID: DLOG-006
+Date: 2026-06-29
+Project: Founder Operating System
+Category: Future OS / Founder Capability
+Decision: Founder Growth OS ではなく Founder Capability OS として、
+          Wave2 完了後に設計候補として扱う。
+          Wave2 期間中は Founder OS Freeze Rule により実装禁止。
+          本エントリはその記録のみ行う。
+
+Context: Founder が在宅収入・副業・仕事選びを検討する中で、
+         「仕事で得た能力を IPPO や将来アプリへ還元する仕組み」が必要になった。
+         これは一般的なキャリア管理ではなく、Founder が自社プロダクトに必要な能力を
+         意図的に獲得し、事業へ移転し、Founder OS へ標準化する仕組みである。
+
+Reason: このOSが管理する対象は「成長」そのものではなく、
+        SEO / UX / SaaS運営 / KPI分析 / コンテンツ / オンボーディング /
+        価格設計 / 継続率改善などの具体的な Capability であるため。
+        そのため Founder Growth OS ではなく Founder Capability OS という名称が適切。
+
+Core Concept:
+  仕事
+  ↓ 学んだこと
+  ↓ IPPO へ適用
+  ↓ 効果測定
+  ↓ Founder OS へ標準化
+  ↓ 次のアプリへ再利用
+
+Planned Structure (post-Wave2 設計候補):
+  Founder Capability OS
+  ├── Capability Map
+  ├── Learning Strategy
+  ├── Work Selection Framework
+  ├── Skill Transfer Framework
+  ├── Knowledge Management
+  ├── Reflection System
+  └── Capability KPI
+
+Important Principle:
+  「この仕事は、自社プロダクトのどの能力を伸ばすのか？」という基準で仕事を選ぶ。
+
+Initial Capability Map:
+  - SEO: 集客・記事・検索流入
+  - UX: 継続率・オンボーディング
+  - KPI: ダッシュボード・改善判断
+  - Content: note・LP・教育コンテンツ
+  - Onboarding: 初回体験・ヘルプ・離脱防止
+  - Pricing: Premium設計・収益化
+  - Customer Success: 問い合わせ・ユーザー理解
+  - Research: 市場調査・競合分析
+  - Analytics: 行動分析・改善サイクル
+  - SaaS Operations: 運営・改善・リリース管理
+
+Alternatives Considered:
+  - Founder Growth OS → 「成長」という結果を指すため範囲が広すぎる → 却下
+  - Career OS → 一般的なキャリア管理に見え Founder OS の思想とズレる → 却下
+  - Learning OS → 学習に寄りすぎ、IPPO や事業への Skill Transfer が弱くなる → 却下
+
+Impact: Wave2 完了後、Founder OS v1.0 以降で設計候補になる。
+        IPPO・断食アプリ・Imaging Agriculture・AgriPath など全アプリへ適用可能。
+        Founder の仕事選び・学習・事業改善が分断されず、能力獲得が資産化される。
+
+Related Documents:
+  - founder-workflow-os/09_DECISION_LOG.md（このファイル）
+  - founder-workflow-os/08_PROGRESS_REGISTRY.md
+  - Founder OS Freeze Rule（Wave2 期間中は新 OS 実装禁止）
+  - template-business-os/README.md
+  - brand-os/README.md
+  - analytics-os/README.md
+  - customer-success-os/README.md
+
+Related PRs: None（Wave2 期間中は実装しない）
+
+Requires Council? yes（Wave2 完了後に実施）
+Requires Founder Approval? yes（実装前に承認必須）
+
+Review Date: IPPO Wave2 PR-075 完了後
+Status: Deferred / Recorded for post-Wave2 design
+```
+
+---
+
 ## Review Rule
 
 Decision Log は以下のタイミングで見直してください。
