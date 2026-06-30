@@ -28,6 +28,45 @@
 
 ---
 
+## [0.5.1] — 2026-06-30
+
+### Added
+
+- `analytics-os/os-metrics/CURRENT_STATE.md` — Snapshot First の起点。PR 完了・週次レビュー時に更新（v1.1）
+- `analytics-os/os-metrics/CONTEXT_LOADER.md` — イベント別ファイルロードルール。全ファイル一括読込禁止（v1.1）
+
+### Changed
+
+- `analytics-os/os-metrics/README.md` — v1.1 原則（Snapshot First / Event Driven / Incremental Update / Context Loader）追記
+- `analytics-os/os-metrics/WEEKLY_REVIEW_WORKFLOW.md` — Snapshot First フロー・イベント別更新ルール追記
+
+---
+
+## [0.5.0] — 2026-06-30
+
+### Added
+
+- `analytics-os/os-metrics/README.md` — Analytics OS os-metrics サブシステム概要
+- `analytics-os/os-metrics/METRICS_DEFINITION.md` — 10 KPI 定義（Completion Rate / Usage Count / Usage % / Balance Score / PR Success Rate / Scope Creep / Architecture Violation / Template Reuse / Founder Efficiency / Asset Accumulation）
+- `analytics-os/os-metrics/OS_SCORECARD.md` — OS 別 Completion Rate（初期値 / 差分更新ルール / 履歴）
+- `analytics-os/os-metrics/OS_USAGE_MATRIX.md` — 週次 OS 利用回数 / Usage % / 利用カウント基準
+- `analytics-os/os-metrics/OS_BALANCE_SCORE.md` — Balance Score 計算式 / 現在値 / 偏り分析 / 閾値 / 改善提案
+- `analytics-os/os-metrics/FOUNDER_EFFICIENCY.md` — 10 Asset カテゴリ / 週次記録 / 目標
+- `analytics-os/os-metrics/WEEKLY_REVIEW_TEMPLATE.md` — 週次レビュー記入フォーム（前週アーカイブ込み）
+- `analytics-os/os-metrics/WEEKLY_REVIEW_WORKFLOW.md` — Claude Code 実行フロー（Step 1〜11）
+
+### Changed
+
+- `analytics-os/README.md` — os-metrics セクション追加・週次レビュープロンプト追加
+- `CANONICAL_SOURCE.md` — Founder OS 成熟度の Canonical Source として `CURRENT_STATE.md` 追記
+
+### Notes
+
+- Analytics OS v1.0: Founder OS 自体の定量管理を開始
+- 週次レビュープロンプト1行で全指標を自動更新できる仕組みを確立
+
+---
+
 ## [0.4.2] — 2026-06-29
 
 ### Added

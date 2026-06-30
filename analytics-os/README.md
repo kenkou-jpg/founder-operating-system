@@ -39,7 +39,34 @@
 
 ---
 
-## 将来追加予定
+## os-metrics — Founder OS 自己分析（v1.0/v1.1 追加済み）
+
+Founder Operating System 自体の成熟度・使用率・Founder Efficiency を定量管理するサブシステム。
+
+```
+analytics-os/os-metrics/
+├── CURRENT_STATE.md            ← 最初に読む（Snapshot First）
+├── CONTEXT_LOADER.md           ← 読むファイルをイベント別に決定
+├── README.md
+├── METRICS_DEFINITION.md       ← 10 KPI 定義
+├── OS_SCORECARD.md             ← OS 別 Completion Rate
+├── OS_USAGE_MATRIX.md          ← 週次 OS 利用回数
+├── OS_BALANCE_SCORE.md         ← 利用バランス分析
+├── FOUNDER_EFFICIENCY.md       ← Founder Asset 増加管理
+├── WEEKLY_REVIEW_TEMPLATE.md   ← 週次レビュー記入フォーム
+└── WEEKLY_REVIEW_WORKFLOW.md   ← Claude Code 実行フロー
+```
+
+**週次レビュープロンプト:**
+```
+Founder Operating System の週次レビューを実施してください。
+Analytics OS に従ってください。
+Founder Operating System のみ更新してください。
+```
+
+---
+
+## 将来追加予定（プロダクト Analytics）
 
 - `KPI_DEFINITIONS.md` — 全指標の定義辞書（計算式・集計期間・除外条件）
 - `NORTHSTAR_FRAMEWORK.md` — プロダクトタイプ別NSMの選定ガイド
