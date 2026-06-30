@@ -2,7 +2,7 @@
 
 > PR Generator OS のエントリポイント。
 > Claude Code は PR 開始時に必ずこのファイルを最初に読み、実行モードを決定する。
-> モード選択は AI の独自判断ではなく、このファイルに定義された OS ルールに基づく。
+> **モード選択は Claude Code の推測ではなく、`MODE_SELECTION_MATRIX.md` のルールに基づき一意に決定する。**
 
 ---
 
@@ -215,35 +215,38 @@ PR 開始
   ↓
 00_EXECUTION_DISPATCHER.md を読む（このファイル）
   ↓
-Mode Selection Rules を確認
+MODE_SELECTION_MATRIX.md を読む（推測禁止・ルールベース決定）
   ↓
-┌─────────────────────────────────────────┐
-│ FULL_MODE が該当する条件に1つでも一致？  │
-│   Yes → FULL_MODE                       │
-│   No  ↓                                 │
-│ STANDARD_MODE が該当する条件に1つでも一致？│
-│   Yes → STANDARD_MODE                   │
-│   No  → FAST_MODE                       │
-└─────────────────────────────────────────┘
+Execution Mode 決定（FAST / STANDARD / FULL）
   ↓
 Execution Mode Decision を出力
   ↓
 Execution Metadata を生成（必須）
   ↓
-対応する MODE.md を読んで実装開始
+SMART_DOCUMENT_LOADING.md（必要文書のみ読む）
   ↓
-（Escalation 発生時は Metadata を更新して上位 MODE.md へ）
+TOKEN_OPTIMIZATION.md（行動規範確認）
   ↓
-Completion Report に Execution Metadata を転記
+REPORT_OPTIMIZATION.md（出力形式確認）
   ↓
-Progress Registry Live Progress に Execution Metadata を転記
+PR_INPUT_SHEET 記入
+  ↓
+Validation（Mode 別）
+  ↓
+Implementation
+  ↓
+Completion Report（REPORT_OPTIMIZATION.md に従い Mode 別短縮）
+  ↓
+Progress Registry Live Progress（Execution Metadata を転記）
+  ↓
+Decision Log 更新条件確認（条件該当時のみ更新）
 ```
 
 ---
 
 ## Mode 決定後に読む文書（順序厳守）
 
-Mode を決定したら、必ず以下の順序で参照する。
+MODE_SELECTION_MATRIX.md で Mode を決定したら、必ず以下の順序で参照する。
 
 ```
 1. SMART_DOCUMENT_LOADING.md  ← 読む文書の絞り込みルール
@@ -256,6 +259,7 @@ Mode を決定したら、必ず以下の順序で参照する。
 
 ## 関連ドキュメント
 
+- `MODE_SELECTION_MATRIX.md` — ルールベース Mode 決定マトリクス（v1.0）★ここで Mode を決める
 - `SMART_DOCUMENT_LOADING.md` — Mode 別文書読込ルール（v0.4.2）
 - `TOKEN_OPTIMIZATION.md` — トークン消費の行動規範（v0.4.2）
 - `REPORT_OPTIMIZATION.md` — Completion Report の最適化（v0.4.2）

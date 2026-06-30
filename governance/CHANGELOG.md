@@ -28,6 +28,34 @@
 
 ---
 
+## [0.4.3] — 2026-06-30
+
+### Added
+
+- `development-os/pr-generator-os/MODE_SELECTION_MATRIX.md` — ルールベース Mode 決定マトリクス v1.0
+  - FAST / STANDARD / FULL の対象 PR タイプを網羅的に定義
+  - 14 ステップ判定フロー（FULL 優先 → STANDARD → FAST）
+  - 複合 PR ルール（最高リスク優先）
+  - Escalation ルール（実行中の発見による上位 Mode 切替）
+
+### Changed
+
+- `00_EXECUTION_DISPATCHER.md` — Execution Flow を MODE_SELECTION_MATRIX 起点に更新
+  - 推測禁止・ルールベース決定を明記
+  - Flow: MODE_SELECTION_MATRIX → Execution Mode 決定 → SMART_DOCUMENT_LOADING → TOKEN_OPTIMIZATION → REPORT_OPTIMIZATION → PR_INPUT_SHEET → Validation → Implementation → Completion Report → Progress Registry → Decision Log判定
+  - 関連ドキュメントに MODE_SELECTION_MATRIX.md 追加
+- `FAST_MODE.md` — MODE_SELECTION_MATRIX で選択された場合のみ利用する旨を追記
+- `STANDARD_MODE.md` — 同様に追記
+- `FULL_MODE.md` — 同様に追記
+- `README.md` — Mode Selection Matrix セクション追加・Execution Flow に Decision Log 判定を追加
+
+### Notes
+
+- Execution Dispatcher がルールベースになったことで Claude Code の実行が決定論的になった
+- 推測による Mode 選択を廃止。不明な場合は上位 Mode を選択するルールを明示
+
+---
+
 ## [0.5.1] — 2026-06-30
 
 ### Added

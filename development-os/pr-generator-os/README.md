@@ -14,13 +14,21 @@
 | `STANDARD_MODE` | 重要度中（新 Domain / Event / DI など）| 中 |
 | `FULL_MODE` | Architecture 変更・Migration・Release・Phase 終了 | 最大 |
 
-**モード選択は AI の独自判断ではなく、`00_EXECUTION_DISPATCHER.md` の OS ルールに基づく。**
+**Execution Mode は Claude Code の推測ではなく、`MODE_SELECTION_MATRIX.md` により決定される。**
 **判断に迷う場合は `STANDARD_MODE`。Security / Privacy / AI / Research / Release は必ず `FULL_MODE`。**
+
+### Mode Selection Matrix
+
+Execution Mode は Claude Code の推測ではなく `MODE_SELECTION_MATRIX.md` により決定される。
+PR タイプ・変更内容を判定フローに入力し、FAST / STANDARD / FULL を一意に決定する。
+複合 PR は最も高いリスクの条件を採用する（FULL > STANDARD > FAST）。
 
 ### Execution Flow
 
 ```
 Dispatcher（00_EXECUTION_DISPATCHER.md）
+  ↓
+MODE_SELECTION_MATRIX.md（ルールベースで Mode 決定・推測禁止）
   ↓
 Execution Metadata 生成（Mode / Reason / Version / Escalation / Generated At）
   ↓
@@ -33,6 +41,8 @@ Implementation（FAST_MODE / STANDARD_MODE / FULL_MODE）
 Completion Report（REPORT_OPTIMIZATION.md に従って Mode 別短縮）
   ↓
 Progress Registry Live Progress（Execution Metadata を転記）
+  ↓
+Decision Log 更新条件確認（条件該当時のみ）
 ```
 
 ### Optimization Pack v0.4.2

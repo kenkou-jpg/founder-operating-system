@@ -5,6 +5,16 @@
 
 ---
 
+## Mode Selection（必須）
+
+```
+FULL は MODE_SELECTION_MATRIX.md で選択された場合のみ利用する。
+Claude Code の推測によるモード選択は禁止。
+MODE_SELECTION_MATRIX.md の判定フローで FULL と決定した PR のみ、このファイルを読む。
+```
+
+---
+
 ## Optimization Pack（必須参照）
 
 ```
