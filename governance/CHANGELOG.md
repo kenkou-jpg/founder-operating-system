@@ -28,6 +28,32 @@
 
 ---
 
+## [0.4.6] — 2026-06-30
+
+### Added
+
+- `CLAUDE.md` — Claude Code Startup Rule（v1.0）
+  - Founder OS に関する実行要求を受けた場合の起動ルールを定義
+  - Startup Sequence（User Prompt → CLAUDE.md → BOOTSTRAP → FOUNDER_OS_REFERENCE → Dispatcher → Matrix → Optimization Pack → Implementation → Completion Report → Progress Registry → Decision Log）
+  - 対象となる実行要求の定義（Founder OS / PR Generator OS / Execution Dispatcher / Analytics OS 週次レビュー ほか）
+  - 禁止事項の明示（Startup Rule スキップ禁止・探索禁止・推測禁止）
+
+### Changed
+
+- `BOOTSTRAP.md` — Startup Origin Rule セクション追加
+  - BOOTSTRAP は CLAUDE.md からのみ開始されることを明記
+  - 直接 Execution Dispatcher を開始することを禁止
+- `README.md` — Startup Sequence 章を新規追加（CLAUDE.md → BOOTSTRAP → Dispatcher の唯一の起動経路を記載）
+
+### Notes
+
+- Added CLAUDE.md: Introduced Claude Code Startup Rule
+- Execution now always starts from BOOTSTRAP.md via CLAUDE.md
+- Startup sequence is fully deterministic
+- Repository discovery eliminated from startup
+
+---
+
 ## [0.4.5] — 2026-06-30
 
 ### Added

@@ -4,11 +4,27 @@
 
 ---
 
+## Startup Sequence
+
+Founder Operating System の唯一の起動経路は以下のとおりである。
+
+```
+CLAUDE.md（Claude Code Startup Rule）
+  ↓
+BOOTSTRAP.md（実行起点）
+  ↓
+Execution Dispatcher（00_EXECUTION_DISPATCHER.md）
+```
+
+この経路を経由しない Execution 開始は禁止する。Repository Discovery は禁止する。
+
+---
+
 ## Execution Mode Dispatcher
 
-**Founder Operating System は独立 Repository で管理される。Claude Code は `BOOTSTRAP.md` を起点として Execution を開始する。Repository Discovery は禁止する。**
+**Founder Operating System は独立 Repository で管理される。Claude Code は `CLAUDE.md` → `BOOTSTRAP.md` を起点として Execution を開始する。Repository Discovery は禁止する。**
 
-**Claude Code は PR 開始時に `BOOTSTRAP.md` → `FOUNDER_OS_REFERENCE.md` → `00_EXECUTION_DISPATCHER.md` の順に読み、実行モードを決定する。**
+**Claude Code は PR 開始時に `CLAUDE.md` → `BOOTSTRAP.md` → `FOUNDER_OS_REFERENCE.md` → `00_EXECUTION_DISPATCHER.md` の順に読み、実行モードを決定する。**
 
 | Mode | 用途 | コンテキスト消費 |
 |------|------|--------------|
