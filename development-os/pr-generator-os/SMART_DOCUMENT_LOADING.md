@@ -2,6 +2,10 @@
 
 > 毎 PR で全 Governing Documents を読まない。必要な文書だけ読む。
 > コンテキスト消費を削減しながら、重要文書の読み落としを防ぐ。
+>
+> **前提: このファイルを読む前に `REPOSITORY_EXPLORATION_POLICY.md` を確認し、探索範囲を確定していること。**
+> Background Research Agent の起動・Repository 全体探索・Scope外ファイル探索は、
+> このファイルが定める「必要な文書」の範囲に含まれない。
 
 ---
 
@@ -43,26 +47,38 @@
 ✗ Founder Strategic Review 全文
 ✗ 過去 PR 完了レポート全文
 ✗ Wave 全体の実装方針文書（当該 PR に関係しない部分）
+✗ Background Research Agent による探索結果（起動自体が禁止 — REPOSITORY_EXPLORATION_POLICY.md）
+✗ Repository 全体への探索的 grep / Glob（全ファイル名検索・全ディレクトリ列挙）
 ```
 
 ---
 
-## STANDARD_MODE — 読込ルール（Smart Validation Loading v1.0）
+## STANDARD_MODE — 読込ルール（Smart Validation Loading v1.1）
 
-### Always Load（毎回読む）
+### 再読禁止ルール（v0.4.11 追加）
 
 ```
-Startup / Context:
-  - CLAUDE.md
-  - BOOTSTRAP.md
-  - FOUNDER_OS_REFERENCE.md
-  - 00_EXECUTION_DISPATCHER.md
-  - MODE_SELECTION_MATRIX.md
-  - SMART_DOCUMENT_LOADING.md
-  - TOKEN_OPTIMIZATION.md
-  - REPORT_OPTIMIZATION.md
+Startup Sequence で既読のファイルは再読禁止。参照扱いとする。
 
-PR Context:
+既読ファイル（再読禁止・Startup Sequence で読み済み）:
+  CLAUDE.md
+  BOOTSTRAP.md
+  FOUNDER_OS_REFERENCE.md
+  00_EXECUTION_DISPATCHER.md（このファイルを読む前に既読）
+  MODE_SELECTION_MATRIX.md
+  REPOSITORY_EXPLORATION_POLICY.md
+  SMART_DOCUMENT_LOADING.md（このファイル自身）
+  TOKEN_OPTIMIZATION.md
+  REPORT_OPTIMIZATION.md
+
+上記 9 ファイルをこの段階で再度読むことは禁止する。
+「Always Load だから読む」という解釈は誤り。Startup Sequence で読んだものは在コンテキストにある。
+```
+
+### Always Load（毎回読む — Startup Sequence 完了後に追加で読む文書）
+
+```
+PR Context（Startup Sequence に含まれないため毎回読む）:
   - HANDOFF（前 PR からの引き継ぎ情報）
   - PR_INPUT_SHEET（当該 PR の実行シート）
 ```
@@ -136,6 +152,8 @@ Validation は削除不可。以下を必ず読む。
 ✗ 全 Business / Legal 文書（変更がない場合）
 ✗ 過去 PR 完了レポート全文
 ✗ Wave 全体方針文書（当該 PR に関係しない部分）
+✗ Background Research Agent の起動・その探索結果（REPOSITORY_EXPLORATION_POLICY.md）
+✗ Repository 全体探索・Scope外ドメインの実装ファイル
 ```
 
 ---
@@ -198,5 +216,6 @@ Reason:
 ## 関連ドキュメント
 
 - `00_EXECUTION_DISPATCHER.md` — Mode 選択（このファイルより先に読む）
+- `REPOSITORY_EXPLORATION_POLICY.md` — 探索範囲の確定（このファイルより先に読む）
 - `TOKEN_OPTIMIZATION.md` — トークン消費の行動規範
 - `FAST_MODE.md` / `STANDARD_MODE.md` / `FULL_MODE.md` — Mode 別必須チェック

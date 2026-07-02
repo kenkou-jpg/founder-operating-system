@@ -28,6 +28,76 @@
 
 ---
 
+## [0.4.11] — 2026-07-02
+
+### Changed（Token消費緊急修正）
+
+- `development-os/pr-generator-os/SMART_DOCUMENT_LOADING.md`
+  - v1.1 へ更新
+  - 「再読禁止ルール」セクション追加: Startup Sequence で既読の 9 ファイル（CLAUDE / BOOTSTRAP / FOUNDER_OS_REFERENCE / DISPATCHER / MATRIX / REPO_POLICY / SMART_LOADING / TOKEN_OPT / REPORT_OPT）の再読を明示禁止
+  - Always Load の Startup/Context セクション（8ファイル）を削除。代替として「再読禁止ルール」を記述
+  - Always Load は「PR Context（HANDOFF + PR_INPUT_SHEET）」のみに縮小
+  - 効果: Always Load から 8 ファイル分の重複読込を排除（推定 -1,600〜4,000 tokens）
+
+- `development-os/pr-generator-os/00_EXECUTION_DISPATCHER.md`
+  - Quick Reference Execution Flow から Always Load ブロック（11ファイル列挙）を削除
+  - 代替として「再読禁止ファイル一覧」と「PR Context（ここで読む）」の明示を追加
+
+- `CLAUDE.md`
+  - 禁止事項に「Startup Sequence 既読ファイルの再読禁止」「Agent tool 起動禁止」を追加
+  - 新セクション「Background Agent 禁止ルール（v0.4.11 強化）」追加: 理由の種類を問わず Agent tool 起動禁止・検討した時点で停止・Founder 報告を義務化
+
+- `BOOTSTRAP.md`
+  - 禁止事項に「Startup Sequence 既読 9 ファイルの再読禁止」「Agent tool 起動禁止」を追加
+
+- `development-os/pr-generator-os/REPOSITORY_EXPLORATION_POLICY.md`
+  - v1.1 へ更新
+  - 禁止事項を 10 項目 → 12 項目に拡張: Agent tool 起動禁止（理由の種類不問）・再読禁止ルールへの参照を追加
+
+### Fixed
+
+- SMART_DOCUMENT_LOADING.md の Always Load が Startup Sequence 既読ファイルを再読指示していた設計上の重複を修正
+- 00_EXECUTION_DISPATCHER.md の Quick Reference が Always Load として 11 ファイル列挙を指示しており、Startup Sequence との二重読込を招いていた点を修正
+
+### Notes
+
+- IPPO リポジトリへの変更なし
+- 品質低下なし（Validation 4種・HANDOFF・PR_INPUT_SHEET は引き続き必須）
+- 推定削減効果: -6,000〜12,000 tokens / PR（Background Agent が抑止された場合さらに -15,000〜25,000）
+
+---
+
+## [0.4.10] — 2026-07-02
+
+### Added
+
+- `development-os/pr-generator-os/REPOSITORY_EXPLORATION_POLICY.md` — Repository Exploration Policy v1.0
+  - Background research agents prohibited during PR startup.
+  - Repository-wide exploration prohibited.
+  - PR execution now scope-first and dependency-bounded.
+  - 許可される読込を HANDOFF / Roadmap該当PR / PR Scope / 直接依存ファイル / 直接関連テスト / 必須Validation文書に限定
+  - 不明点がある場合のみ、対象ディレクトリ内に限定した Escalation 探索を許可（Background Agent 不可）
+
+### Changed
+
+- `CLAUDE.md` — Startup Sequence / Execution Rule に REPOSITORY_EXPLORATION_POLICY.md を MODE_SELECTION_MATRIX の直後へ追加。禁止事項に Background Agent 起動禁止・Repository全体探索禁止・Scope外ファイル探索禁止を追加。参照先に追加。
+- `BOOTSTRAP.md` — 実行順序に REPOSITORY_EXPLORATION_POLICY.md を追加。禁止事項・参照先を更新。
+- `development-os/pr-generator-os/00_EXECUTION_DISPATCHER.md` — 新セクション「Repository Exploration Policy」追加。Quick Reference — Execution Flow / 「Mode 決定後に読む文書（順序厳守）」/ 関連ドキュメントを更新。
+- `development-os/pr-generator-os/SMART_DOCUMENT_LOADING.md` — 前提として REPOSITORY_EXPLORATION_POLICY.md の確認を明記。FAST/STANDARD の「読まない文書」に Background Agent・Repository全体探索を追加。関連ドキュメントを更新。
+- `development-os/pr-generator-os/TOKEN_OPTIMIZATION.md` — Must / Must Not / リスク対処表に Repository Exploration Policy 関連項目を追加。関連ドキュメントを更新。
+- `development-os/pr-generator-os/STANDARD_MODE.md` — Optimization Pack 必須参照に追加。新セクション「Repository Exploration Restrictions」追加（禁止事項・許可される読込・Escalation条件）。
+- `development-os/pr-generator-os/README.md` — Execution Flow 図・ファイル構成・Version方針表を更新。Optimization Pack セクションに Repository Exploration Policy の説明を追加。現在バージョンを v0.4.10 に更新。
+
+### Notes
+
+- Added Repository Exploration Policy.
+- Background research agents prohibited during PR startup.
+- Repository-wide exploration prohibited.
+- PR execution now scope-first and dependency-bounded.
+- IPPO リポジトリへの変更はなし（本ポリシーは Founder OS 専用の変更）
+
+---
+
 ## [0.4.9] — 2026-07-02
 
 ### Added

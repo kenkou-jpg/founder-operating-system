@@ -17,6 +17,8 @@ Execution Dispatcher（00_EXECUTION_DISPATCHER.md — PR 実行の起点）
   ↓
 MODE_SELECTION_MATRIX.md（ルールベースで FAST / STANDARD / FULL を決定）
   ↓
+REPOSITORY_EXPLORATION_POLICY.md（探索範囲を確定 — Background Agent / 全探索禁止）
+  ↓
 Optimization Pack（SMART_DOCUMENT_LOADING → TOKEN_OPTIMIZATION → REPORT_OPTIMIZATION）
   ↓
 PR Generator OS（選択した MODE.md に従い実装）
@@ -56,6 +58,11 @@ Completion Report が完成するまで継続してください。
 禁止: Founder OS のファイルを検索・探索する
 禁止: FOUNDER_OS_REFERENCE.md を読まずに OS ファイルのパスを推測する
 禁止: この順序を変更する
+禁止: PR開始時に Background Research Agent（Explore / general-purpose 等）を起動する
+禁止: 対象プロジェクトの Repository 全体・Scope外ファイルを探索する
+禁止: Startup Sequence で既読のファイルを再読する（9ファイル: CLAUDE/BOOTSTRAP/FOUNDER_OS_REFERENCE/
+      DISPATCHER/MATRIX/REPO_POLICY/SMART_LOADING/TOKEN_OPT/REPORT_OPT）
+禁止: Agent tool を PR 処理中に任意の目的で起動する（詳細: CLAUDE.md Background Agent 禁止ルール）
 ```
 
 ---
@@ -75,3 +82,4 @@ BOOTSTRAP.md を起点として Execution Dispatcher を開始する。
 
 - `FOUNDER_OS_REFERENCE.md` — Repository Mapping・Loading Rules
 - `development-os/pr-generator-os/00_EXECUTION_DISPATCHER.md` — Execution Dispatcher
+- `development-os/pr-generator-os/REPOSITORY_EXPLORATION_POLICY.md` — Repository 探索制限ルール
