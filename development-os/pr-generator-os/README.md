@@ -35,6 +35,28 @@ Execution Dispatcher（00_EXECUTION_DISPATCHER.md）
 **Execution Mode は Claude Code の推測ではなく、`MODE_SELECTION_MATRIX.md` により決定される。**
 **判断に迷う場合は `STANDARD_MODE`。Security / Privacy / AI / Research / Release は必ず `FULL_MODE`。**
 
+### Execution Rule
+
+Founder OS に関する実行要求を受けた場合、Claude Code は以下を順番通り・省略なしで実施する。
+
+```
+BOOTSTRAP → FOUNDER_OS_REFERENCE → Execution Dispatcher → Execution Mode 決定
+→ Optimization Pack → PR Generator OS → PR_INPUT_SHEET → Validation
+→ Implementation → Completion Report → Progress Registry → Decision Log 判定
+```
+
+途中終了は禁止。Execution Dispatcher の途中から開始してはいけない。
+
+### Execution Guarantee
+
+Execution Dispatcher は Execution Mode を決定した後、Completion Report まで継続する。
+Execution Mode 決定のみ・Validation のみ・Implementation 開始前での停止は禁止する。
+
+### Completion Guarantee
+
+Execution は Completion Report が完成するまで終了してはいけない。
+Completion Report・Progress Registry 更新・Decision Log 判定の省略は禁止する。
+
 ### Mode Selection Matrix
 
 Execution Mode は Claude Code の推測ではなく `MODE_SELECTION_MATRIX.md` により決定される。

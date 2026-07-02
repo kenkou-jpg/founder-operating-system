@@ -49,6 +49,44 @@ Decision Log 判定（条件該当時のみ更新）
 
 ---
 
+## Execution Rule
+
+Founder Operating System に関する実行要求を受けた場合、Claude Code は以下を必ず順番通り実施する。
+
+```
+BOOTSTRAP.md を読む
+  ↓
+FOUNDER_OS_REFERENCE.md を読む
+  ↓
+Execution Dispatcher を起動する
+  ↓
+Execution Mode を決定する（MODE_SELECTION_MATRIX）
+  ↓
+Optimization Pack を適用する
+  ↓
+PR Generator OS を実行する（PR_INPUT_SHEET 記入）
+  ↓
+Validation を実施する（Mode 別）
+  ↓
+Implementation を完了する
+  ↓
+Completion Report を作成する
+  ↓
+Progress Registry を更新する
+  ↓
+Decision Log 判定を実施する
+```
+
+```
+途中終了は禁止する。
+途中で推測してはいけない。
+Repository 探索は禁止する。
+Execution Dispatcher の途中から開始してはいけない。
+Completion Report が完成するまで Execution を終了してはいけない。
+```
+
+---
+
 ## 禁止事項
 
 ```

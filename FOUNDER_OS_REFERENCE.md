@@ -64,6 +64,18 @@ BOOTSTRAP.md を起点として Execution Dispatcher を開始する。
 
 ---
 
+## Execution Continuation Policy
+
+```
+Founder Operating System は BOOTSTRAP 起点で開始した場合、
+Execution Rule（CLAUDE.md）を最後まで継続してください。
+
+途中終了は禁止する。
+Completion Report が完成するまで Execution を終了してはいけない。
+```
+
+---
+
 ## Reference Rules
 
 ### Claude Code への禁止事項

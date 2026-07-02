@@ -7,6 +7,42 @@
 
 ---
 
+## Execution Guarantee
+
+```
+Execution Dispatcher は Execution Mode を決定した後、必ず以下まで継続する。
+
+  Optimization Pack 適用
+    ↓
+  PR Generator OS 実行（PR_INPUT_SHEET 記入）
+    ↓
+  Validation（Mode 別）
+    ↓
+  Implementation
+    ↓
+  Completion Report
+    ↓
+  Progress Registry 更新
+    ↓
+  Decision Log 判定
+
+Execution Mode 決定だけで終了してはいけない。
+Optimization Pack 適用だけで終了してはいけない。
+Validation だけで終了してはいけない。
+Implementation 開始前に停止してはいけない。
+```
+
+## Completion Guarantee
+
+```
+Execution は Completion Report が完成するまで終了してはいけない。
+Completion Report の作成を省略することは禁止する。
+Progress Registry 更新を省略することは禁止する。
+Decision Log 判定を省略することは禁止する。
+```
+
+---
+
 ## Purpose
 
 Execution Dispatcher は以下の目的のために存在します。

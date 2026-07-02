@@ -28,6 +28,30 @@
 
 ---
 
+## [0.4.7] — 2026-06-30
+
+### Added
+
+- **Execution Rule**（`CLAUDE.md`）— Founder OS 実行要求を受けた場合に Claude Code が順番通り実施すべき全ステップを定義。途中終了・推測・Repository 探索・Dispatcher 途中開始を禁止。
+- **Execution Guarantee**（`00_EXECUTION_DISPATCHER.md`）— Execution Mode 決定後、Optimization Pack → PR Generator OS → Validation → Implementation → Completion Report → Progress Registry → Decision Log まで継続することを保証。途中停止を明示的に禁止。
+- **Completion Guarantee**（`00_EXECUTION_DISPATCHER.md`）— Completion Report が完成するまで Execution を終了してはいけないことを明示。
+
+### Changed
+
+- `CLAUDE.md` — Execution Rule セクション追加（全ステップ定義・禁止事項拡充）
+- `BOOTSTRAP.md` — Bootstrap Completion Rule セクション追加（Dispatcher 起動後も継続することを明記）
+- `FOUNDER_OS_REFERENCE.md` — Execution Continuation Policy セクション追加（途中終了禁止を明記）
+- `README.md` — Execution Rule / Execution Guarantee / Completion Guarantee の3章を追加
+
+### Notes
+
+- Added Execution Rule: all steps from startup to completion are now explicitly defined
+- Added Execution Guarantee: Dispatcher cannot stop at mode selection
+- Added Completion Guarantee: Execution cannot terminate before Completion Report
+- Removed ambiguity in execution continuation
+
+---
+
 ## [0.4.6] — 2026-06-30
 
 ### Added

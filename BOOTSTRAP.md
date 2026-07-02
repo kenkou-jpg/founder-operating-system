@@ -36,6 +36,19 @@ CLAUDE.md → BOOTSTRAP.md の順序は変更禁止。
 
 ---
 
+## Bootstrap Completion Rule
+
+```
+BOOTSTRAP は Execution Dispatcher を起動するまで終了してはいけない。
+
+Execution Dispatcher 起動後も Execution Rule（CLAUDE.md）に従い、
+Completion Report が完成するまで継続してください。
+
+途中で止まることは禁止する。
+```
+
+---
+
 ## 禁止事項
 
 ```
