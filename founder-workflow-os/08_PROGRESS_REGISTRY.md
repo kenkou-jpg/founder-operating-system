@@ -1,7 +1,8 @@
 # 08 — Progress Registry
 
-> Founder Operating System と各アプリの現在地を一元管理する。
+> Founder Operating System と各アプリの **現在地のみ** を一元管理する。
 > この文書は「現在地」を一目で分かるようにするための文書であり、開発履歴を書く文書ではありません。
+> **PR 履歴・Scope 変更履歴は `project-registry/[app-name]/PROJECT_PROGRESS.md` に記録する。**
 
 ---
 
@@ -46,7 +47,8 @@ Progress Registry
 - ❌ PR Scope を変更しない
 - ❌ Binding Decision を変更しない
 - ❌ IPPO の設計判断を上書きしない
-- ❌ 開発履歴・PR一覧を蓄積しない（それは `11_PR_RESPONSIBILITY_REGISTRY.md` の責務）
+- ❌ 開発履歴・PR一覧を蓄積しない
+- ❌ プロジェクト固有の PR 履歴を書かない（`project-registry/[app-name]/PROJECT_PROGRESS.md` の責務）
 
 ---
 
@@ -59,7 +61,9 @@ Progress Registry
 | `docs/ARCHITECTURE.md`（各リポジトリ）| 設計 |
 | `docs/ROADMAP.md`（各リポジトリ）| 順序 |
 | `governance/BINDING_DECISIONS.md` | 仕様・拘束力のある決定 |
-| `development-os/pr-generator-os/11_PR_RESPONSIBILITY_REGISTRY.md` | PR完了履歴 |
+| `development-os/pr-generator-os/11_PR_RESPONSIBILITY_REGISTRY.md` | 共通責務ルール |
+| `project-registry/[app-name]/PROJECT_PROGRESS.md` | PR 完了履歴・Milestone 詳細 |
+| `project-registry/[app-name]/RESPONSIBILITY_HISTORY.md` | PR 単位の責務・Scope 履歴 |
 
 ---
 

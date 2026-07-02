@@ -28,6 +28,33 @@
 
 ---
 
+## [0.4.9] — 2026-07-02
+
+### Added
+
+- `project-registry/README.md` — Project Registry 概要・新プロジェクト追加方法
+- `project-registry/PROJECT_REGISTRY_POLICY.md` — Common OS と Project Registry の分離ポリシー（Rule 1〜5）
+- `project-registry/ippo/README.md` — IPPO 専用 Registry 概要
+- `project-registry/ippo/PROJECT_PROGRESS.md` — IPPO PR 進捗・Milestone 履歴
+- `project-registry/ippo/RESPONSIBILITY_HISTORY.md` — IPPO PR 単位の責務・Scope 履歴
+- `project-registry/ippo/WEEKLY_METRICS.md` — IPPO 週次 KPI・Velocity
+
+### Changed
+
+- `FOUNDER_OS_REFERENCE.md` — Project Registry Mapping テーブルを追加
+- `founder-workflow-os/08_PROGRESS_REGISTRY.md` — 説明を「現在地のみ管理」に更新。PR 履歴は project-registry へ委譲。責務分離テーブルに Project Registry 行を追加。
+- `development-os/pr-generator-os/11_PR_RESPONSIBILITY_REGISTRY.md` — 説明を「共通責務ルール管理」に更新。PR 単位履歴は project-registry へ委譲。
+- `README.md` — Architecture 図（Common OS + Project Registry）を追加。OS 構成にproject-registry を追加。
+
+### Notes
+
+- Added Project Registry Architecture: Common OS とプロジェクト固有情報を完全分離
+- Founder Operating System is now Multi-Project Ready
+- Project history isolated from Common OS
+- Project Registry は同構造で新プロジェクトを追加可能（Fasting / Imaging Agriculture / Future Apps）
+
+---
+
 ## [0.4.8] — 2026-07-02
 
 ### Added

@@ -169,6 +169,20 @@ CURRENT_STATE.md 更新
 
 ---
 
+## Project Registry Mapping
+
+| プロジェクト | Registry パス | 管理内容 |
+|-----------|-------------|---------|
+| **IPPO** | `project-registry/ippo/` | PROJECT_PROGRESS / RESPONSIBILITY_HISTORY / WEEKLY_METRICS |
+| **Fasting App**（将来）| `project-registry/fasting/` | 同構造で追加 |
+| **Imaging Agriculture**（将来）| `project-registry/imaging-agriculture/` | 同構造で追加 |
+| **Future Apps** | `project-registry/[app-name]/` | 同構造で拡張可能 |
+
+**Common OS にプロジェクト固有情報を書くことは禁止する。**
+詳細は `project-registry/PROJECT_REGISTRY_POLICY.md` を参照。
+
+---
+
 ## Dispatcher Version
 
 ```

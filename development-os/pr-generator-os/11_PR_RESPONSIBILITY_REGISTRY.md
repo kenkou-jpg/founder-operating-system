@@ -1,8 +1,8 @@
 # 11 — PR Responsibility Registry
 
-> 各PRの責務を永久管理する文書。
-> **PR Scopeの唯一のSSoT（Single Source of Truth）。**
-> PRが完了したら必ずここに登録する。削除しない（Append-Only）。
+> **共通責務ルール・責務分離の原則** を管理する Common OS 文書。
+> PR 単位の責務履歴・Scope 変更履歴はここに書かない。
+> **プロジェクト固有の PR 履歴は `project-registry/[app-name]/RESPONSIBILITY_HISTORY.md` に記録する。**
 
 ---
 

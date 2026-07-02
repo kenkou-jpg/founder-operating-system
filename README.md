@@ -88,11 +88,34 @@ Founder OSはこの問題を解くための仕組みです。
 
 ---
 
+## Architecture
+
+```
+Founder Operating System
+│
+├── Common OS（共通基盤）
+│   ├── Analytics OS          ← OS 利用率・Founder Efficiency・Asset Score
+│   ├── Founder Workflow OS   ← Stage 管理・Progress Registry（現在地のみ）
+│   ├── PR Generator OS       ← PR 単位開発標準・Execution Dispatcher
+│   └── Development OS        ← アーキテクチャ方針・開発標準
+│
+└── Project Registry（プロジェクト固有情報）
+      ├── IPPO                 ← PR 履歴・責務履歴・週次 KPI
+      ├── Fasting App          ← （将来追加）
+      ├── Imaging Agriculture  ← （将来追加）
+      └── Future Apps          ← 同構造で拡張可能
+```
+
+---
+
 ## OS構成
 
 ```
 founder-operating-system/
 │
+├── CLAUDE.md                    ← Claude Code Startup Rule（最上位エントリポイント）
+├── BOOTSTRAP.md                 ← 実行起点
+├── FOUNDER_OS_REFERENCE.md      ← External Repository Mapping
 ├── README.md                    ← このファイル
 ├── FOUNDER_PHILOSOPHY.md        ← 創業者の根本思想
 ├── OPERATING_PRINCIPLES.md      ← 事業横断の運営原則
@@ -118,6 +141,14 @@ founder-operating-system/
 │   ├── IMAGING_AGRICULTURE.md
 │   ├── FASTING_APP.md
 │   └── PORTFOLIO_KPI.md
+│
+├── project-registry/            ← プロジェクト固有情報（Common OS と分離）
+│   ├── PROJECT_REGISTRY_POLICY.md
+│   ├── ippo/
+│   │   ├── PROJECT_PROGRESS.md
+│   │   ├── RESPONSIBILITY_HISTORY.md
+│   │   └── WEEKLY_METRICS.md
+│   └── [future-app]/            ← 同構造で拡張可能
 │
 ├── templates/                   ← 再利用可能テンプレート
 │
