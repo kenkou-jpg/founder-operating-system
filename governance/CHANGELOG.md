@@ -28,6 +28,31 @@
 
 ---
 
+## [0.4.4] — 2026-06-30
+
+### Added
+
+- `FOUNDER_OS_REFERENCE.md` — External Repository Mapping v1.0
+  - Founder OS が IPPO とは独立した Repository で管理されることを明示
+  - Repository Mapping テーブル（Development OS / PR Generator OS / Founder Workflow OS / Analytics OS / Execution Dispatcher / Optimization Pack ほか）
+  - PR タイプ別 Loading Rules（通常 PR / FULL PR / 週次レビュー）
+  - Claude Code への禁止事項（Repository 探索・推測・IPPO 内での検索）
+  - IPPO と Founder OS の関係定義
+
+### Changed
+
+- `00_EXECUTION_DISPATCHER.md` — Execution Flow の先頭に FOUNDER_OS_REFERENCE.md 確認ステップを追加。Repository 探索禁止を明記。関連ドキュメントに追加。
+- `README.md` — Execution Dispatcher 章に Founder OS 独立 Repository 管理・FOUNDER_OS_REFERENCE.md 起点参照・探索禁止を追記。Execution Flow 更新。
+
+### Notes
+
+- Added External Repository Mapping: Execution Dispatcher now supports external Founder OS references
+- Repository discovery removed: Claude Code no longer searches for Founder OS files
+- Reduced unnecessary repository search: context efficiency improved
+- Claude Code execution is now deterministic from FOUNDER_OS_REFERENCE → Dispatcher → Matrix
+
+---
+
 ## [0.4.3] — 2026-06-30
 
 ### Added

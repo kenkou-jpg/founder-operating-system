@@ -6,7 +6,9 @@
 
 ## Execution Mode Dispatcher
 
-**Claude Code は PR 開始時に `00_EXECUTION_DISPATCHER.md` を最初に読み、実行モードを決定する。**
+**Founder Operating System は独立 Repository で管理される。Claude Code は `FOUNDER_OS_REFERENCE.md` を起点として必要文書のみ参照する。Repository 探索は禁止する。**
+
+**Claude Code は PR 開始時に `FOUNDER_OS_REFERENCE.md` → `00_EXECUTION_DISPATCHER.md` の順に読み、実行モードを決定する。**
 
 | Mode | 用途 | コンテキスト消費 |
 |------|------|--------------|
@@ -26,6 +28,8 @@ PR タイプ・変更内容を判定フローに入力し、FAST / STANDARD / FU
 ### Execution Flow
 
 ```
+FOUNDER_OS_REFERENCE.md（External Repository Mapping・探索禁止）
+  ↓
 Dispatcher（00_EXECUTION_DISPATCHER.md）
   ↓
 MODE_SELECTION_MATRIX.md（ルールベースで Mode 決定・推測禁止）
