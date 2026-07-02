@@ -239,6 +239,52 @@
 
 ---
 
+> **注記（2026-07-02）:** PR-045〜PR-069 はこの Registry に個別追記されていない
+> （IPPO 側 `docs/HANDOFF_PHASE7_COMPLETE.md` / `docs/WAVE2_ROADMAP.md` が実績の正）。
+> 本 PR-070 から Registry 追記を再開する。過去分の遡及追記は本 PR の Scope 外（Scope Creep）。
+
+### PR-070 — Dataset DOI Candidate
+
+| 項目 | 内容 |
+|------|------|
+| **ステータス** | 完了 |
+| **タイプ** | Domain |
+| **責務** | DatasetVersion → DOI候補ID付与・Citation生成（APA/Nature）|
+| **Wave / Phase** | Wave 2 / Phase F（Research Platform）|
+| **入力** | PR-055（DatasetVersionService）/ PR-068（ResearchDatasetV2）|
+| **出力** | `DOICandidateService` / `citation-generator.js` |
+| **依存PR** | PR-055（完了済み）/ PR-069（完了済み）|
+| **次PR** | PR-071 |
+
+**追加してよいもの:**
+- `DOICandidateService`（assignDoiCandidate / attachDoiCandidateToDatasetV2 / generateCitation）
+- `citation-generator.js`（純粋関数）
+- `doi-candidate-types.js`（IPPO_DOI_PREFIX 等のSSOT）
+
+**追加禁止:**
+- Research Query API（PR-071担当）
+- 新規 Repository / 新規 Domain Event
+
+**変更禁止:**
+- `dataset-version-entity.js` の既存 `doiCandidate`（UUID）フィールド生成ロジック
+- 既存 `DatasetVersionService` の公開API
+
+**削除禁止:**
+- 既存の DatasetVersion / ResearchDatasetV2 実装
+
+| フラグ | 値 |
+|-------|-----|
+| Repository担当 | NO |
+| Migration担当 | NO |
+| Event担当 | NO |
+| API担当 | YES |
+| UI担当 | NO |
+| AI担当 | NO |
+| DB担当 | NO |
+| DI担当 | YES |
+
+---
+
 ## Registry — 新規プロジェクト用テンプレート
 
 新しいプロジェクトを始めるとき、このセクションを複製して使用してください。

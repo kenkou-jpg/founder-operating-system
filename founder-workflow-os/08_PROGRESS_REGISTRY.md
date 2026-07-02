@@ -85,21 +85,21 @@ Last Updated:           # YYYY-MM-DD
 
 ### IPPO — Live Progress
 
-*最終更新: 2026-06-28*
+*最終更新: 2026-07-02*
 
 ```
 Project: IPPO
 Current Stage: S14 PR Development
 Current Phase: Build
-Wave: Wave2 / Phase A Infrastructure Migration
-Current PR: PR-044
-Next PR: PR-045
-Completion %: 3 / ~35 PRs (Wave2) ≈ 9%
-Execution Mode Used: （PR-044 実装時に記入）
+Wave: Wave2 / Phase F Research Platform
+Current PR: PR-070
+Next PR: PR-071
+Completion %: 30 / ~35 PRs (Wave2) ≈ 86%
+Execution Mode Used: STANDARD
 Dispatcher Version: v0.4
-Escalation: NO（PR-044 実装時に更新）
+Escalation: NO
 Status: Active
-Last Updated: 2026-06-28
+Last Updated: 2026-07-02
 ```
 
 ### Founder Operating System — Live Progress
@@ -149,7 +149,7 @@ Last Updated: 2026-06-28
 
 | Project | Status | Stage | Lifecycle | Current PR | Next Action | Repository | Notes |
 |---------|--------|-------|-----------|-----------|-------------|-----------|-------|
-| IPPO | 開発中 | S14 PR Dev | MVP | PR-044 | PR-044 実装開始 | kenkou-jpg/ippo | Wave2 Phase A |
+| IPPO | 開発中 | S14 PR Dev | MVP | PR-070 | PR-071 着手 | kenkou-jpg/ippo | Wave2 Phase F |
 | AgriPath | 計画中 | S01 Idea | Idea | — | IPPO 安定後に着手 | — | 農業×SaaS |
 | Imaging Agriculture | 研究中 | S02 Problem Discovery | Research | — | 研究継続 | — | 学術・研究フェーズ |
 | Fasting App | 概念 | S01 Idea | Idea | — | IPPO 安定後に着手 | — | ヘルスケア |
