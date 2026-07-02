@@ -96,12 +96,18 @@ Claude Code の 5時間制限・コンテキスト消費に対応するための
 
 | ファイル | 目的 |
 |---------|------|
-| `SMART_DOCUMENT_LOADING.md` | Mode 別の文書読込ルール（必要文書のみ読む）|
+| `SMART_DOCUMENT_LOADING.md` | Mode 別の文書読込ルール（Always Load / Conditional Loading）|
 | `REPORT_OPTIMIZATION.md` | Completion Report の Mode 別行数制限（FAST:20行 / STANDARD:50行）|
 | `TOKEN_OPTIMIZATION.md` | トークン消費の行動規範（Must / Must Not / Test / Output 定義）|
 
-**削ってよいもの:** 長文要約・全文書一括読込・重複説明・毎回の全 BD 列挙・既知失敗の深掘り
-**削ってはいけないもの:** Scope 確認・BD 重大違反確認・Architecture Guard・Test・Build・PR 責務分離
+**Lazy Validation Loading（v0.4.8）:**
+- **目的:** 品質維持 + Token 削減 + Execution 高速化
+- **Always Load:** Startup 文書 + PR Context + Validation 4種（毎回・削除禁止）
+- **Conditional Load:** Architecture Checklist / Decision Log / Progress Registry / Analytics OS（条件成立時のみ）
+- **禁止:** 通常 PR での Progress Registry 先読み・無関係 Architecture Checklist・全 BD 一覧読込
+
+**削ってよいもの:** 長文要約・全文書一括読込・重複説明・毎回の全 BD 列挙・既知失敗の深掘り・条件不成立の Conditional 文書
+**削ってはいけないもの:** Validation 4種（Responsibility / Roadmap / Scope / BD Compliance）・Architecture Guard・Test・Build・PR 責務分離
 
 ---
 

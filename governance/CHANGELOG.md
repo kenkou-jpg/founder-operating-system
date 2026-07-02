@@ -28,6 +28,32 @@
 
 ---
 
+## [0.4.8] — 2026-07-02
+
+### Added
+
+- **Lazy Validation Loading**（`STANDARD_MODE.md`）— Validation に必要な文書のみ読む。Validation Order（Responsibility → Roadmap → Scope → BD Compliance → 条件付き Architecture / Decision Log / Progress Registry）を明文化。
+- **Conditional Loading 判定**（`00_EXECUTION_DISPATCHER.md` Execution Flow）— Validation 後に条件判定を行い、必要文書のみ追加読込するステップを追加。
+
+### Changed
+
+- `SMART_DOCUMENT_LOADING.md` — STANDARD_MODE 読込ルールを Smart Validation Loading v1.0 に更新
+  - Always Load: Startup 文書 8点 + HANDOFF + PR_INPUT_SHEET
+  - Validation Documents: Responsibility / Roadmap / Scope / BD Compliance（毎回・削除不可）
+  - Conditional Loading: Progress Registry（PR完了時のみ）/ Decision Log（Founder判断候補等のみ）/ Architecture Checklist（Architecture変更時のみ）/ Analytics OS（週次レビュー時のみ）
+- `STANDARD_MODE.md` — Lazy Validation Loading セクション追加（Validation Order + 条件定義）
+- `00_EXECUTION_DISPATCHER.md` — Execution Flow に Always Load ステップ + Conditional Loading 判定ステップを追加
+- `README.md` — Optimization Pack に Lazy Validation Loading の説明を追加
+
+### Notes
+
+- Added Lazy Validation Loading: Conditional Validation Documents introduced
+- Reduced unnecessary document loading in STANDARD_MODE
+- Validation quality maintained: Responsibility / Roadmap / Scope / BD Compliance は Always Load
+- STANDARD_MODE optimized: Progress Registry は PR 開始時禁止・完了時のみ読む
+
+---
+
 ## [0.4.7] — 2026-06-30
 
 ### Added

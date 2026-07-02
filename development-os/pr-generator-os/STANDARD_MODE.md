@@ -44,6 +44,24 @@ This mode must follow:
 
 ---
 
+## Lazy Validation Loading
+
+```
+Validation に必要な文書のみ読む。不要文書の読込は禁止。
+
+Validation Order（この順番で実施）:
+  1. Responsibility Validation（必須）
+  2. Roadmap Validation（必須）
+  3. Scope Validation（必須）
+  4. BD Compliance（必須）
+  ---- 条件成立時のみ ----
+  5. Architecture Checklist（Architecture / DI / Layer / Repository Interface 変更時のみ）
+  6. Decision Log（Founder 判断候補 / Roadmap変更 / Architecture変更 / Business変更時のみ）
+  7. Progress Registry（PR 完了時・Completion Report 作成時のみ。PR 開始時は禁止）
+```
+
+---
+
 ## 必須チェック（省略不可）
 
 ```

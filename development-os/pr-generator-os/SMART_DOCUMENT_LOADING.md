@@ -47,35 +47,95 @@
 
 ---
 
-## STANDARD_MODE — 読込ルール
+## STANDARD_MODE — 読込ルール（Smart Validation Loading v1.0）
 
-### 必須（毎回読む）
-
-```
-- Roadmap の当該 PR エントリ（Phase 単位）
-- Responsibility Registry（当該 PR + 直前 2〜3 件）
-- Architecture の関連セクション（新 Domain / Service / Event の部分）
-- BD の関連セクション（適用可能な BD のみ）
-- Progress Registry の Live Progress スナップショット
-- 関連 Domain ファイル
-- 関連テストファイル
-```
-
-### 必要時のみ
+### Always Load（毎回読む）
 
 ```
-- Implementation Governance（実装仕様の確認が必要な場合）
-- Council 文書（新 Domain が Council の決定に依存する場合）
-- Data Asset Council / Network Evolution Council（該当する場合）
+Startup / Context:
+  - CLAUDE.md
+  - BOOTSTRAP.md
+  - FOUNDER_OS_REFERENCE.md
+  - 00_EXECUTION_DISPATCHER.md
+  - MODE_SELECTION_MATRIX.md
+  - SMART_DOCUMENT_LOADING.md
+  - TOKEN_OPTIMIZATION.md
+  - REPORT_OPTIMIZATION.md
+
+PR Context:
+  - HANDOFF（前 PR からの引き継ぎ情報）
+  - PR_INPUT_SHEET（当該 PR の実行シート）
 ```
 
-### 読まない文書
+### Validation Documents（毎回読む）
 
 ```
-✗ 全 Council 文書（関係しない Council は読まない）
+Validation は削除不可。以下を必ず読む。
+
+  - Responsibility Registry（11_PR_RESPONSIBILITY_REGISTRY.md）
+  - Roadmap Validator（13_ROADMAP_VALIDATOR.md）
+  - Scope Validator（14_PR_SCOPE_VALIDATOR.md）
+  - BD Compliance Checklist（06_BD_COMPLIANCE_CHECKLIST.md）
+```
+
+### Conditional Loading（条件成立時のみ読む）
+
+#### Progress Registry
+```
+読む条件:
+  ✅ PR 完了時
+  ✅ Completion Report 作成時
+
+読まない条件:
+  ✗ PR 開始時（禁止）
+  ✗ Validation 中（禁止）
+```
+
+#### Decision Log
+```
+読む条件:
+  ✅ Founder 判断候補あり
+  ✅ Roadmap 変更
+  ✅ Architecture 変更
+  ✅ Business 変更
+  ✅ 新 OS 追加
+  ✅ Template 追加
+
+読まない条件:
+  ✗ 通常 PR（Pure Function / Service追加 / Utility など）
+```
+
+#### Architecture Checklist
+```
+読む条件:
+  ✅ Architecture 変更あり
+  ✅ DI 変更あり
+  ✅ Layer 変更あり
+  ✅ Repository Interface 変更あり
+
+読まない条件:
+  ✗ Pure Service 追加のみ（Architecture 変更なし）
+  ✗ Utility / Validation 追加のみ
+```
+
+#### Analytics OS
+```
+読む条件:
+  ✅ 週次レビュー実施時
+  ✅ Analytics 更新時
+
+読まない条件:
+  ✗ 通常 PR（Analytics と無関係）
+```
+
+### 読まない文書（禁止）
+
+```
+✗ 全 Council 文書（関係しない Council）
 ✗ 全 BD 一覧（適用外を含む）
 ✗ 全 Business / Legal 文書（変更がない場合）
 ✗ 過去 PR 完了レポート全文
+✗ Wave 全体方針文書（当該 PR に関係しない部分）
 ```
 
 ---
