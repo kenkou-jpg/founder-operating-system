@@ -28,6 +28,33 @@
 
 ---
 
+## [0.4.5] — 2026-06-30
+
+### Added
+
+- `BOOTSTRAP.md` — Founder Operating System の唯一の実行起点（v1.0.1）
+  - 「Founder Operating System に従ってください。」の解釈を定義
+  - 実行順序（BOOTSTRAP → FOUNDER_OS_REFERENCE → Dispatcher → Matrix → Optimization Pack → Implementation）
+  - 禁止事項の明示（起点スキップ禁止・探索禁止・推測禁止）
+
+### Changed
+
+- `FOUNDER_OS_REFERENCE.md` — Repository Discovery Policy セクション追加
+  - BOOTSTRAP.md → FOUNDER_OS_REFERENCE.md の起動順序を明記
+  - Founder OS Invocation 定義追加（プロンプトと同義の処理を定義）
+  - ヘッダーを BOOTSTRAP 起点に更新
+- `00_EXECUTION_DISPATCHER.md` — Execution Flow 先頭に BOOTSTRAP ステップ追加。関連ドキュメントに BOOTSTRAP.md を追加。
+- `README.md` — BOOTSTRAP.md 起点の Execution 開始・Repository Discovery 禁止を追記。Execution Flow 更新。
+
+### Notes
+
+- Added BOOTSTRAP.md: Execution Dispatcher now starts from BOOTSTRAP
+- Repository Discovery Policy added: Claude Code no longer discovers or searches for Founder OS
+- Founder OS invocation is now deterministic: single prompt triggers full OS execution
+- Reduced unnecessary repository search: context efficiency further improved
+
+---
+
 ## [0.4.4] — 2026-06-30
 
 ### Added
