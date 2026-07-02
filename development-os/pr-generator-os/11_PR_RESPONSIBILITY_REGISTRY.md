@@ -285,6 +285,47 @@
 
 ---
 
+### PR-071 — Research Query API
+
+| 項目 | 内容 |
+|------|------|
+| **ステータス** | 完了 |
+| **タイプ** | Domain / API |
+| **責務** | KG / Dataset / Cohort / Evidence を統合した研究者向けクエリAPI（`admin:research`）|
+| **Wave / Phase** | Wave 2 / Phase F（Research Platform）|
+| **入力** | PR-056（EvidenceLayerService）/ PR-060（Similar Case基盤）/ PR-061（ResearchAssistanceService）/ PR-070（DOI Candidate、Dataset系列の完成）|
+| **出力** | `ResearchQueryApiService`（QueryType: COHORT_STATS / SIGNAL_CORRELATION / DISEASE_CLUSTER_COMPARE / KG_PATH_QUERY）|
+| **依存PR** | PR-056（完了済み）/ PR-060（完了済み）/ PR-061（完了済み）/ PR-070（完了済み）|
+| **次PR** | PR-072（Research Platform Audit）|
+
+**追加してよいもの:**
+- `ResearchQueryApiService`（executeQuery / getStatus）
+- `research-query-types.js`（QUERY_TYPES 等のSSOT）
+- ApiGateway: `executeResearchQuery()` / `getResearchQueryStatus()`
+
+**追加禁止:**
+- Research Platform Audit（PR-072担当）
+- 新規 Repository
+
+**変更禁止:**
+- EvidenceLayerService / ResearchAssistanceService / CohortBuilderService / KnowledgeGraphService の公開API
+
+**削除禁止:**
+- 既存の Evidence / Research Assistance / Cohort / Knowledge Graph 実装
+
+| フラグ | 値 |
+|-------|-----|
+| Repository担当 | NO |
+| Migration担当 | NO |
+| Event担当 | YES（RESEARCH_QUERY_EXECUTED）|
+| API担当 | YES |
+| UI担当 | NO |
+| AI担当 | NO |
+| DB担当 | NO |
+| DI担当 | YES |
+
+---
+
 ## Registry — 新規プロジェクト用テンプレート
 
 新しいプロジェクトを始めるとき、このセクションを複製して使用してください。

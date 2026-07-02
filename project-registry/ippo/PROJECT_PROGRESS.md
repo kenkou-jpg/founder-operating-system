@@ -5,28 +5,33 @@
 
 ---
 
-## Current State（最終更新: 2026-06-30）
+## Current State（最終更新: 2026-07-02）
 
 ```
 Current Project:  IPPO
-Current Phase:    Wave2 Phase A
-Current PR:       PR-044（計画中）
-Next PR:          PR-044
-Completion %:     9%（3 / ~35 PRs）
+Current Phase:    Wave2 Phase F（Research Platform）
+Current PR:       PR-071（完了）
+Next PR:          PR-072
+Completion %:     89%（31 / ~35 PRs）
 Lifecycle:        MVP
 Stage:            S14 PR Development
-Execution Mode:   STANDARD（予定）
+Execution Mode:   STANDARD
 ```
 
 ---
 
 ## Completed PR 履歴
 
+> **注記（2026-07-02）:** PR-044〜PR-069 はこのテーブルに個別追記されていない
+> （IPPO 側 `docs/HANDOFF_PHASE7_COMPLETE.md` / `docs/WAVE2_ROADMAP.md` が実績の正）。
+> 本 PR-071 から追記を再開する。過去分の遡及追記は本 PR の Scope 外（Scope Creep）。
+
 | PR 番号 | タイトル | Phase | Execution Mode | 完了日 |
 |--------|---------|-------|---------------|-------|
 | PR-041 | Wave2 Phase A 開始 PR | Wave2 Phase A | FULL | 2026-06 |
 | PR-042 | （Wave2 PR）| Wave2 Phase A | STANDARD | 2026-06 |
 | PR-043 | （Wave2 PR）| Wave2 Phase A | STANDARD | 2026-06 |
+| PR-071 | Research Query API | Wave2 Phase F | STANDARD | 2026-07-02 |
 
 ---
 
