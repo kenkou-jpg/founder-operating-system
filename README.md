@@ -91,7 +91,7 @@ Founder OSはこの問題を解くための仕組みです。
 ## Architecture
 
 ```
-Founder Operating System
+Founder Operating System（Canonical Source）
 │
 ├── Common OS（共通基盤）
 │   ├── Analytics OS          ← OS 利用率・Founder Efficiency・Asset Score
@@ -99,11 +99,30 @@ Founder Operating System
 │   ├── PR Generator OS       ← PR 単位開発標準・Execution Dispatcher
 │   └── Development OS        ← アーキテクチャ方針・開発標準
 │
+├── App Runtime Export（v0.5.0 追加）
+│   └── development-os/app-runtime/
+│         ├── CLAUDE_TEMPLATE.md      ← 各アプリの CLAUDE.md テンプレート
+│         ├── AI_EXECUTION_TEMPLATE.md ← 各アプリの AI_EXECUTION.md テンプレート
+│         ├── APP_RUNTIME_POLICY.md   ← Export 正式ポリシー（Rule 1〜6）
+│         └── APP_RUNTIME_CHECKLIST.md ← 新規アプリ作成チェックリスト
+│
 └── Project Registry（プロジェクト固有情報）
       ├── IPPO                 ← PR 履歴・責務履歴・週次 KPI
       ├── Fasting App          ← （将来追加）
       ├── Imaging Agriculture  ← （将来追加）
       └── Future Apps          ← 同構造で拡張可能
+```
+
+### App Runtime Export Flow
+
+```
+Founder Operating System
+  ↓ Export
+App Runtime（CLAUDE.md + AI_EXECUTION.md）
+  ↓ 配置
+Application Repository
+  ↓ 毎 PR
+CLAUDE.md → AI_EXECUTION.md → HANDOFF → Implementation → Completion Report
 ```
 
 ---

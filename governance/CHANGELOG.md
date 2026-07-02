@@ -28,6 +28,45 @@
 
 ---
 
+## [0.5.0] — 2026-07-02
+
+### Added App Runtime Export
+
+Added App Runtime Export.
+
+Founder OS now generates lightweight execution runtimes for each application.
+
+Every new application must generate:
+
+- CLAUDE.md
+
+- AI_EXECUTION.md
+
+Founder OS remains the canonical operating system.
+
+Applications execute through lightweight runtimes.
+
+#### 詳細
+
+- `development-os/app-runtime/README.md` — App Runtime Export の概要・役割分担・Export の考え方・適用対象・利点
+- `development-os/app-runtime/APP_RUNTIME_POLICY.md` — 正式ポリシー Rule 1〜6（新規アプリ必須 / Canonical Source維持 / Lightweight Runtime利用 / 毎PR外部OS非依存 / 更新タイミング / 品質維持）
+- `development-os/app-runtime/CLAUDE_TEMPLATE.md` — 新規アプリの CLAUDE.md テンプレート（Startup Rule / Runtime Rule / Execution Flow / 禁止事項 / 標準プロンプト）
+- `development-os/app-runtime/AI_EXECUTION_TEMPLATE.md` — 新規アプリの AI_EXECUTION.md テンプレート（Execution Mode / Repository Exploration Policy / Smart Document Loading / Validation / Test Rule / Report Optimization / Progress Update / Decision Log Rule）
+- `development-os/app-runtime/APP_RUNTIME_CHECKLIST.md` — 新規アプリ作成時のチェックリスト（Phase 1〜4: Runtime生成 / HANDOFF確認 / 動作確認 / PR Generator確認）
+
+### Changed
+
+- `README.md` — Architecture に App Runtime Export フローを追加。Export Flow 図を追加。
+- `FOUNDER_OS_REFERENCE.md` — Repository Mapping に App Runtime Export を正式 Component として追加。
+
+### Notes
+
+- IPPO / 既存アプリへの変更なし
+- Markdown のみ。実装コード変更なし
+- IPPO の App Runtime（CLAUDE.md / AI_EXECUTION.md）は前 PR（v0.4.11 相当）で既に配置済み
+
+---
+
 ## [0.4.11] — 2026-07-02
 
 ### Changed（Token消費緊急修正）
